@@ -1,0 +1,19 @@
+struct2      xml配置action，路径方法名 result返回jsp
+springMVC   注解 requestmaping 请求路径    配置视图，返回页面路径
+springbean  xml配置文件。扫描 autowire
+泛型        把类型校验放到编译期，避免强制转换报错
+hashmap     数组和链表，无序，允许null，计算hashcode决定存储位置  初始容量16，扩容时2的幂次，保证2的幂次是因为&length-1  加载因子默认0.75，越大，元素越多空间利用率高，冲突越大链表越长，查询效率越低
+treemap      二叉树，有序，不允许null
+
+currenthashmap  分段锁弱一致性（乐观锁cas）  get不加锁 final，violate
+
+实物       transction放在 方法上，性能考虑，查询方法上不要用， 只在public方法有效，private无效   A没有注解实物，b注解了实物，a调用b，b的实物无效
+            隔离级别 可重复读 ， 读共享，写独占  。 行级锁
+sql        inoodb支持实物，行级锁   mysqldumpslow slow.log  索引 ，多列索引，覆盖索引 。索引触发行级锁
+
+支付宝   支付宝创建应用appid 公钥私 钥匙  支付宝公钥 ，订单id，金额，商品列表 ， 生成二维码 ，扫码回调验证，更新订单状态
+ 
+jvm         内存模型 程序计数器，堆（对象，数组），栈（临时变量，引用），方法区（类信息），双亲委派机制（），新生代复制算法（存活率低复制小，效率高，浪费内存），老年代标记整理算法（效率低），-XX:+HeapDumpOnOutOfmenoryError -XX:HeapDumpPath= .dump  -XX:PrintGCDEATILs -xms512 -xmx512m  尽量减少fullgc      最大内存和最小内存一样，调高内存（默认是4分之1）   调高新生代（默认1:2）
+
+线程池     多了并发高，栈深度低
+

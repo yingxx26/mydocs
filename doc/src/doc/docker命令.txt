@@ -1,0 +1,29 @@
+从 https://download.docker.com/linux/centos/gpg 检索密钥
+导入 GPG key 0x621E9F35:
+ 用户ID     : "Docker Release (CE rpm) <docker@docker.com>"
+ 指纹       : 060a 61c5 1b55 8a7f 742b 77aa c52f eb6b 621e 9f35
+ 来自       : https://download.docker.com/linux/centos/gpg
+
+先启动虚拟机 
+在CMD终端使用命令vagrant ssh连接虚拟机后，运行sudo -s切换到root用户
+
+启动docker-compose
+docker-compose.yml的同一目录下
+ 首次运行  docker-compose up -ddocker-compose up -d  :   构建(容器)并启动(容器)整个project的所有service
+ 启动已存在但停止的所有service     docker-compose start [serviceName]
+
+
+启动docker  service docker restart
+
+
+构建镜像       docker build -t febs-auth .
+
+进入容器logstash 
+docker exec -it logstash /bin/bash
+
+
+查看id全名  docker ps --no-trunc
+
+登录dockerhub     docker login
+
+push  项目   docker push 、、、、、、、push deny --》docker tag  docker-test  yxx26/docker-test

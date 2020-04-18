@@ -1,0 +1,185 @@
+播放账号：应学欣 密码：364509
+shell ，机架感知（重写类，core-site.xml，打jar包到lib）
+ myact解决的是数据库性能，tcc解决的是应用层分布式事务
+
+复杂业务或者实时sparkstream  用rdd
+离线统计用hive
+
+
+统计用途，一部分 是指标
+  一部分是提供  开发商和中介的  权限服务
+
+项目概况 ，流程图
+
+flume到kafka，一份到hdfs，hive分区表，离线统计 
+                        一份到sparkstreaming ，实时统计，当天
+
+sparkui
+
+实时 自己管理kafka偏移      nginx 源文件 ——> flume（taildir）-->kafkasink-->sparkstream——>redis
+离线 hive自定义函数分区表  nginx  分割后的每天文件夹（logrotate）-->fume(监控文件夹)-->hdfs(sink自定义拦截器，按时间分割目录)->（oozie,hue）{定时清洗jar（spark）-—>（spark）定时load到hive，制作宽表（自定义注册函数）-》定时统计写入mysql(sqoop)}
+
+2,离线 hive自定义函数分区表  nginx  分割后的每天文件夹（logrotate）-->fume(监控文件夹)-->hdfs(sink自定义拦截器，按时间分割目录)->（oozie,hue）{定时清洗jar（spark）-—>（spark）定时load到hive，制作宽表（自定义注册函数）-》定时统计写入mysql(sqoop)}
+
+推荐  模型训练 sqoop到hive，spark，als
+        实时推荐 sparking 加载模型，写入redis
+
+重点：
+
+hive 新增用户，活跃数，最常用的付款方式，一周每天登陆用户，连续N周
+
+生产环境内存
+离线环境 数据倾斜
+
+
+6台服务器 800qps 2千万
+4g  2千万    100G  （15台8g8核）
+1G 4000万数据   etl 3分钟  切分训练集5分钟  训练3分钟
+
+购房人，合同，房屋 宽表    即时->
+
+增加map数设置mapered.map.tasks大
+减小map数 设置mapered.min,split.sizde小
+
+
+hive小文件  1 reduce太多
+                  2 动态分区distribute by
+      解决  1 hadoop archive 命令
+          2重建表重设reduce task 
+          3 设置自动参数   
+   set hive.merge.mapfiles =true;  （hiveonspark有个hive.merge.sparkfiles 都是默认true）
+   set hive.merge.mapredfiles= true;
+set hive.merge.size.per.task = 256*1000*1000 默认自动合并大小
+set  hive.merge.smallfiles.avgsize=16777216 小于16M启动合并
+
+1.    调整reduce个数方法一： （更灵活）
+调整hive.exec.reducers.bytes.per.reducer参数的值；
+set hive.exec.reducers.bytes.per.reducer=500000000; （500M）
+select pt,count(1) from popt_tbaccountcopy_mes where pt = '2012-07-04' group by pt; 这次有20个reduce
+         
+2.    调整reduce个数方法二； （更直接）
+set mapred.reduce.tasks = 15;
+select pt,count(1) from popt_tbaccountcopy_mes where pt = '2012-07-04' group by pt;这次有15个reduce
+如果没有生效，尝试另外一种方法，或则重启下集群试试。
+
+
+数据倾斜 （只对hive） 1  count（distinct）group by   如果groupby后面字段少
+                   解决 set hive.groupby.skewindata=true;
+              2 空用户id的数据  join   分到同一台机器，，或则join的键类型不一样
+                 解决 1skewjoins
+                        2 过滤 
+                        3 加随机数on (case when a.user_id is null then concat('xxxx',rand()) else a.usr_id end) =b.user_id
+
+set mapred.reduce.tasks=200;
+count（distinct）groupby 数据倾斜
+set hive.groupby.mapaggr.checkinterval=100000;
+set hive.groupby.skewindata=true;
+join数据倾斜
+set hive.skewjoin.key=100000;
+set hive.optimize.skewjoin=true;
+
+两张大表join  分区，随机（应该是分桶）
+
+什么时候用hive，什么时候用spark （前面用hive，后面用spark）
+ 
+set hive.optimize.bucketmapjoin= true 
+set hive.mapjoin.smalltable.filesize
+ 
+、
+源码：
+总结关键源码
+资源调度，executor  平均分配executor，worker注册driver
+job==textfile-》dag-》eventProcessLoop-》dag 递归调用父stage -》划分task，获取task最佳位置是否缓存 -》 taskScheduler.submitTasks ->遍历本地化级别-》发送到executor，-》executor注册，方序列化，执行task
+blockmanager  memorystore diskstore
+cache缓存和磁盘
+checkpoint 持久化hdfs
+
+ 调优：
+序列化，缓存
+减小缓存占比
+并行度
+广播变量
+本地化等待时长
+
+spark数据倾斜：
+用hive做shuffle
+双重聚合（groupby）
+mapjoin，broadcast（大表join小表）
+采样key ，分开join（少数key,大表join大表)
+随机数扩容（多数key，大表join大表）
+
+报错  
+jdk6 cdh4  spark1.3.0
+解决数据倾斜，join，双groupby ，union，开窗函数取常用， 导致  PermGen  client正常  cluster报错，  join到etl去做成宽表，再调节一下
+
+文件类操作hive和spark可以一起设置，数据倾斜要根据执行引擎区分， 比如set hive.optimize.skewjoin=true;对spark无效果
+
+ 
+
+
+hiveonspark 调优到底调哪个（hive和spark大多数可以通用，指调优不是数据倾斜）
+
+sqoop 可以parquet
+flume 没有parquet
+压缩方式GZIP、LZO、Zippy/Snappy
+存储格式ORC，Parquet，Sequencefile，RCfile，Avro
+
+业务
+机器学习
+推荐 画像 标签（先逻辑回归，后协同过滤，部分标签对应不同场景，通过算法分析哪些标签有用，商圈标签，标签格式 （标签编码->标签权重））
+
+取出来 归一化，预测出  哪些标签有用（一个场景只做一次），，
+要问，原来数据，数据怎么转化成 机器学习数据，怎么筛选标签用于 分析，用户偏好
+
+sql优化：用测绘数据
+用户画像，没用elasticsearch， 维表日全量，事实表日增量
+看下页面素材
+hashmap源码写个博客https://www.cnblogs.com/duodushuduokanbao/p/9492952.html，包括cpu100，并发hashmap，红黑树https://blog.csdn.net/eson_15/article/details/51144079
+索引https://blog.csdn.net/itguangit/article/details/82145322
+violate 和cas对应，缓存一致性协议  ，别的缓存设置无效
+Synchronized  monitor监视器锁
+cas violate 保证线程安全   
+给你举个实际的场景，让你选择一个GC策略
+用户服务搞个小项目
+Aqs  线程 未获得锁加入 双向队列 尾部      
+单例设计模式
+关于SparkStreaming的checkpoint的弊端https://qindongliang.iteye.com/blog/2356634
+jdk实现同一个接口，对方法加强，  cglib子类继承父类，对方法加强
+扩容看下
+
+TreeMap和LinkedHashMap
+线程池（阻塞队列）
+CyclicBarrier原理
+hive调优https://blog.csdn.net/yeweiouyang/article/details/45665727
+
+
+
+spark源码
+spark调优也写下https://www.cnblogs.com/yulu080808/p/8757051.html
+
+源码：
+总结关键源码
+资源调度，executor  平均分配executor，worker注册driver
+job==textfile-》dag-》eventProcessLoop-》dag 递归调用父stage -》划分task，获取task最佳位置是否缓存 -》 taskScheduler.submitTasks ->遍历本地化级别-》发送到executor，-》executor注册，方序列化，执行task
+blockmanager  memorystore diskstore
+cache缓存和磁盘
+checkpoint 持久化hdfs
+
+ 调优：
+序列化，缓存
+减小缓存占比
+并行度
+广播变量
+本地化等待时长
+
+spark数据倾斜：
+用hive做shuffle
+双重聚合（groupby）
+mapjoin，broadcast（大表join小表）
+采样key ，分开join（少数key,大表join大表)
+随机数扩容（多数key，大表join大表）用SQL模拟
+ 
+redis穿透，雪崩
+
+乐观锁  预约看房 更新 普通索引 
+ 

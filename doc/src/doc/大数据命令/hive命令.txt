@@ -1,0 +1,33 @@
+建表用hive，命令用sparksql
+
+创建分区表
+create table test1(
+userid int,
+movieid int,
+rating double) partitioned by (year int, month int)
+clustered by (userid)   into 2 buckets
+row format delimited fields terminated by ','
+stored as parquet;
+
+添加分区
+alter table test1 add partition (year=2017, month=12);
+
+插入数据
+set hive.enforce.bucketing=true;
+
+insert into  test1  partition(year=2017, month=12)  select userId,movieId,rating from ratings limit 100   ;
+ load data inpath '/flume/events/201809/18/1137' into table test1 partition(ym='201809',day='18',hm='1137'); 
+查看数据
+dfs -lsr /tmp/user/hive/warehouse/;
+
+动态分区
+关闭严格模式
+配置属性hive-site
+
+事务  建表要加tranction
+
+
+
+alter table hz_spfht_gfr2 add partition (year=2000) 
+insert into   hz_spfht_gfr2  partition(year=2000)   select * from hz_spfht_gfr t where  date_format(t.cjsj, 'y') =2000;
+ 

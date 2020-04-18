@@ -1,0 +1,1 @@
+ wsimport -encoding utf-8 -p com.hzfc.ws.htpdf -keep http://172.16.100.145:8091/Gxcx/services/Zjzww_Query?wsdl

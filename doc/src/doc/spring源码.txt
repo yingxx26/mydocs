@@ -1,0 +1,39 @@
+代码跟踪 ctrl+alt+鼠标   或者 ctrl+t
+XmlBeanFactory
+doLoadBeanDefinitions . doLoadDocument转化为doc
+registerBeanDefinitions  doRegisterBeanDefinitions 解析 parseBeanDefinitions  注册registerBeanDefinition
+模板模式 抽象类里面抽象方法，子类重写
+委派模式 leader和follower（两个以上）实现统一接口，leader持有follower引用
+
+
+
+doGetBean 加载
+factorybean
+装饰器模式 继承并引用同一个 要扩展的类
+doCreateBean
+
+实例化bean的时候 lookup 用aop，cglib
+beanfactory 简单工厂
+
+AbstractApplicationContext.refresh
+
+观察者模式  两个接口， 观察者接口，被观察者接口，被观察者持有观察者接口引用
+
+
+springmvc
+contextInitialized
+initWebApplicationContext  configureAndRefreshWebApplicationContext  refresh
+适配器模式 两个接口，a1实现a接口，b1实现b接口， b1继承a1，b1即有了a接口，又有了b接口（aop通知转拦截和springmvc handler转adaper，传入url参数）
+
+aop责任链模式   
+
+注册用enable，import  注入用aware  ，两个阶段都有getbean方法
+(在注册阶段)比如enableaspectjautoproxy注解 ，创建annotionawareaspectjautoproxycreator（实现了postprosser和aware）注册到factory 
+
+(在注入阶段）aware 原理 创建bean 调用beanpostprosser，postprosser看其实现了什么接口或者注解，从容器中注入对应组件
+
+aop 有个特殊的prosser，instantiationawarebeanpostprosser在创建bean实例前执行,返回代理。通知方法就是advisor（增强器）
+获取增强器，创建代理对象
+执行阶段。获取拦截器链，转成instecpet，proceed
+
+注册（保存类名和关系）  初始化（实例化每个类）  注入（实例化依赖，属性中的类）

@@ -1,0 +1,11 @@
+一，下载好后的xxx.box文件复制到vagrant_vm目录下，并且重命名为centos7.box（删除centos7.box之外的文件和目录，只保留centos7.box一个文件）。
+
+
+二，vagrant box add -name 'centos/7' centos7.box
+
+
+三，vagrant init centos/7
+
+
+四，vagrant up
+注意 文件名字

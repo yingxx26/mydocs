@@ -1,0 +1,215 @@
+（实例1）
+
+# example.conf: A single-node Flume configuration
+
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = netcat
+a1.sources.r1.bind = storage4
+a1.sources.r1.port = 44444
+
+# Describe the sink
+a1.sinks.k1.type = logger
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+
+
+
+启动（包含路径，，agent名a1，配置路径，配置文件名）
+
+/usr/local/src/apache-flume-1.7.0-bin/bin/flume-ng agent -n a1 -c /usr/local/src/apache-flume-1.7.0-bin/conf -f /usr/local/src/apache-flume-1.7.0-bin/conf/example.conf -Dflume.root.logger=INFO,console    
+
+测试 telnet storage4 44444 回车
+
+（实例2）
+
+#me the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = exec
+a1.sources.r1.command = tail -F /usr/local/src/data/data.log
+a1.sources.r1.shell = /bin/sh -c
+
+# Describe the sink
+a1.sinks.k1.type = logger
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+  
+
+
+启动
+
+/usr/local/src/apache-flume-1.7.0-bin/bin/flume-ng agent -n a1 -c /usr/local/src/apache-flume-1.7.0-bin/conf -f /usr/local/src/apache-flume-1.7.0-bin/conf/exec-memory-logger.conf -Dflume.root.logger=INFO,console    
+
+测试 echo hello >> data.log
+
+
+（实例2  hdfs）
+
+#mple.conf: A single-node Flume configuration
+#me the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = exec
+a1.sources.r1.command = tail -F /usr/local/src/data/data.log
+a1.sources.r1.shell = /bin/sh -c
+
+# Describe the sink
+a1.sinks.k1.type = hdfs
+a1.sinks.k1.hdfs.path = hdfs://storage9:9000/flume/events/%y-%m-%d/%H%M/%S
+a1.sinks.k1.hdfs.filePrefix = events-  
+a1.sinks.k1.hdfs.round = true  
+a1.sinks.k1.hdfs.roundValue = 1  
+a1.sinks.k1.hdfs.roundUnit = hour  
+a1.sinks.k1.hdfs.useLocalTimeStamp = true  
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+
+启动
+
+/usr/local/src/apache-flume-1.7.0-bin/bin/flume-ng agent -n a1 -c /usr/local/src/apache-flume-1.7.0-bin/conf -f /usr/local/src/apache-flume-1.7.0-bin/conf/exec-memory-hdfs.conf -Dflume.root.logger=INFO,console    
+
+
+
+（实例3  avro  ）
+exec-memory-avro.conf
+
+ # single-node Flume configuration
+#me the components on this agent
+exec-memory-avro.sources = exec-source
+exec-memory-avro.sinks = avro-sink
+exec-memory-avro.channels = memory-channel
+
+# Describe/configure the source
+exec-memory-avro.sources.exec-source.type = exec
+exec-memory-avro.sources.exec-source.command = tail -F /usr/local/src/data/data.log
+exec-memory-avro.sources.exec-source.shell = /bin/sh -c
+
+# Describe the sink
+exec-memory-avro.sinks.avro-sink.type = avro
+exec-memory-avro.sinks.avro-sink.hostname = storage8
+exec-memory-avro.sinks.avro-sink.port = 44445
+
+# Use a channel which buffers events in memory
+exec-memory-avro.channels.memory-channel.type = memory
+
+# Bind the source and sink to the channel
+exec-memory-avro.sources.exec-source.channels = memory-channel
+exec-memory-avro.sinks.avro-sink.channel = memory-channel
+
+后启动 134
+
+/usr/local/src/apache-flume-1.7.0-bin/bin/flume-ng agent -n exec-memory-avro -c /usr/local/src/apache-flume-1.7.0-bin/conf -f /usr/local/src/apache-flume-1.7.0-bin/conf/exec-memory-avro.conf -Dflume.root.logger=INFO,console   
+
+
+avro-memory-logger.conf
+
+ # single-node Flume configuration
+#me the components on this agent
+avro-memory-logger.sources = avro-source
+avro-memory-logger.sinks = logger-sink
+avro-memory-logger.channels = memory-channel
+
+# Describe/configure the source
+avro-memory-logger.sources.avro-source.type = avro
+avro-memory-logger.sources.avro-source.bind = storage8
+avro-memory-logger.sources.avro-source.port = 44445
+
+# Describe the sink
+avro-memory-logger.sinks.logger-sink.type = logger
+
+# Use a channel which buffers events in memory
+avro-memory-logger.channels.memory-channel.type = memory
+
+# Bind the source and sink to the channel
+avro-memory-logger.sources.avro-source.channels = memory-channel
+avro-memory-logger.sinks.logger-sink.channel = memory-channel
+
+先启动138
+
+/usr/local/src/apache-flume-1.7.0-bin/bin/flume-ng agent -n avro-memory-logger -c /usr/local/src/apache-flume-1.7.0-bin/conf -f /usr/local/src/apache-flume-1.7.0-bin/conf/avro-memory-logger.conf -Dflume.root.logger=INFO,console    
+
+后启动 134
+
+/usr/local/src/apache-flume-1.7.0-bin/bin/flume-ng agent -n exec-memory-avro -c /usr/local/src/apache-flume-1.7.0-bin/conf -f /usr/local/src/apache-flume-1.7.0-bin/conf/exec-memory-avro.conf -Dflume.root.logger=INFO,console   
+
+
+测试 134 
+cd /usr/local/src/data/ 
+echo hello >> data.log
+
+
+（实例3  kafka ）
+
+
+avro-memory-kafka.conf
+
+ # single-node Flume configuration
+#me the components on this agent
+avro-memory-kafka.sources = avro-source
+avro-memory-kafka.sinks = kafka-sink
+avro-memory-kafka.channels = memory-channel
+
+# Describe/configure the source
+avro-memory-kafka.sources.avro-source.type = avro
+avro-memory-kafka.sources.avro-source.bind = storage8
+avro-memory-kafka.sources.avro-source.port = 44445
+
+# Describe the sink
+avro-memory-kafka.sinks.kafka-sink.type = org.apache.flume.sink.kafka.KafkaSink
+avro-memory-kafka.sinks.kafka-sink.kafka.bootstrap.servers = storage:9092,storage4:9092,storage5:9092
+avro-memory-kafka.sinks.kafka-sink.kafka.topic = hello1
+avro-memory-kafka.sinks.kafka-sink.flumeBatchSize =5
+avro-memory-kafka.sinks.kafka-sink.kafka.producer.acks =1
+
+
+# Use a channel which buffers events in memory
+avro-memory-kafka.channels.memory-channel.type = memory
+
+# Bind the source and sink to the channel
+avro-memory-kafka.sources.avro-source.channels = memory-channel
+avro-memory-kafka.sinks.kafka-sink.channel = memory-channel
+
+
+139  /usr/local/src/kafka_2.10-0.10.0.0/0.10kafkaStart.sh    
+先启动
+138
+/usr/local/src/apache-flume-1.7.0-bin/bin/flume-ng agent -n avro-memory-kafka -c /usr/local/src/apache-flume-1.7.0-bin/conf -f /usr/local/src/apache-flume-1.7.0-bin/conf/avro-memory-kafka.conf -Dflume.root.logger=INFO,console    
+
+后启动 134
+
+/usr/local/src/apache-flume-1.7.0-bin/bin/flume-ng agent -n exec-memory-avro -c /usr/local/src/apache-flume-1.7.0-bin/conf -f /usr/local/src/apache-flume-1.7.0-bin/conf/exec-memory-avro.conf -Dflume.root.logger=INFO,console   
+
+
+测试130
+cd /usr/local/src/kafka_2.10-0.10.0.0   
+bin/kafka-console-consumer.sh --zookeeper 192.168.181.130:2181,192.168.181.134:2181,192.168.181.135:2181 --topic hello1 --from-beginning
+
+134
+cd /usr/local/src/data/ 
+echo hello >> data.log

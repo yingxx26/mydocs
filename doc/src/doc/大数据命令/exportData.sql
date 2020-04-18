@@ -1,0 +1,1 @@
+load data inpath '/flume/events/${ym}/${day}/${hm}' into table test4 partition(ym='${ym}',day='${day}',hm='${hm}') ;

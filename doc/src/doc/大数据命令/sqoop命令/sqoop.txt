@@ -1,0 +1,17 @@
+import 
+--username  
+root   
+--password  
+123456
+--connect     
+jdbc:mysql://192.168.181.1:3306/test?characterEncoding=UTF-8 
+--table 
+ddd  
+--fields-terminated-by 
+','
+--delete-target-dir 
+--hive-import   
+--hive-database 
+default  
+--hive-table 
+ddd

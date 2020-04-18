@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace=""
+	xmlns=""
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xml:lang="en">
+	
+	<xs:element name="Client">
+		<xs:complexType>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Report" type="Report" abstract="true"/>
+	<xs:complexType name="Report" abstract="true">
+	</xs:complexType>
+	
+	<xs:element name="ReportImpl">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="Report"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ReportImpl1">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="Report"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,8 @@
+docker查看日志
+
+docker logs   id 
+
+
+docker启动compose
+
+docker-compose up -d
