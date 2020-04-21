@@ -1,0 +1,34 @@
+1.重构验证码 把接口实现放在map里 private Map<String, ValidateCodeProcessor> validateCodeProcessors;是关键
+
+@Component
+public class ValidateCodeProcessorHolder {
+
+	@Autowired
+	private Map<String, ValidateCodeProcessor> validateCodeProcessors;
+
+	/**
+	 * @param type
+	 * @return
+	 */
+	public ValidateCodeProcessor findValidateCodeProcessor(ValidateCodeType type) {
+		return findValidateCodeProcessor(type.toString().toLowerCase());
+	}
+
+	/**
+	 * @param type
+	 * @return
+	 */
+	public ValidateCodeProcessor findValidateCodeProcessor(String type) {
+		String name = type.toLowerCase() + ValidateCodeProcessor.class.getSimpleName();
+		ValidateCodeProcessor processor = validateCodeProcessors.get(name);
+		if (processor == null) {
+			throw new ValidateCodeException("验证码处理器" + name + "不存在");
+		}
+		return processor;
+	}
+
+}
+
+
+2 短信登录  自定义filter，provider，token，，config
+3.验证码 拦截url，做成yml可配  ValidateCodeFilter
