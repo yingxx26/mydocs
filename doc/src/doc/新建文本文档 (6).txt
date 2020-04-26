@@ -78,4 +78,7 @@ Jwt 三个组成部分
 
 mybatis  装饰器 ，代理
 
-装饰器和代理区别，jdk7 jdk8时间版本 conditiononporiety注解
+装饰器和代理区别，
+
+
+看下享元模式
