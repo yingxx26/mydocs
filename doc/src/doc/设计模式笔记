@@ -12,8 +12,8 @@ Builder                   建造者模式    构造对象时防止参数过长
 状态模式和责任链模式 ：状态模式 流程已经定义好了，责任链模式不确定
 
 工厂模式和建造者模式  产品之间差异大不适合建造者模式，
-桥接模式(Bridge)  action注入service就是   （正常情况只能一个）。   开发商和中介
-外观模式      action service dao  也是外观模式
+桥接模式(Bridge)  action   注入service就是   （正常情况只能一个）。   开发商和中介
+外观模式      action service dao  一个service里组合多个dao也是外观模式
 
 
 适配器模式的意义
