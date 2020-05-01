@@ -1,0 +1,3 @@
+显示uml结构图 ctrl +shift +alt+ U
+
+抽取方法 ctrl+alt+m
