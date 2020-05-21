@@ -1,3 +1,6 @@
 显示uml结构图 ctrl +shift +alt+ U
 
 抽取方法 ctrl+alt+m
+
+块编辑 按住alt，点击鼠标左键拖动
+
