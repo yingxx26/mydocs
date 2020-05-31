@@ -87,3 +87,7 @@ mybatis  装饰器 ，代理
 类图： 实体类
 活动图 : 业务逻辑
 顺序图 : 无异常逻辑
+
+https://github.com/yingxx26/logistics-back
+https://github.com/yingxx26/roncoo-pay
+https://github.com/yingxx26/jeesite
