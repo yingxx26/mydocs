@@ -1,0 +1,92 @@
+方括号数据绑定
+小括号事件绑定
+
+生成组件 ng g c  fangyuan/HousingForm
+
+export * from './housing-form.component';   导出给别人使用
+
+import 导入外部模块
+export  暴露给其他模块使用的 组件指令管道
+providers 提供注入服务
+declaration 自己模块内部 组件 指令 管道
+
+
+ngmodel 数据绑定
+
+
+路由
+RouterModule.forRoot
+ RouterModule.forChild(routes)
+
+  <a [routerLink]="['./districts']">行政区划</a>
+this.router.navigate(['/guoyou/zsxm']);
+
+
+管道是为了 前端 变换数据
+
+依赖注入 ： 有@injectable（{provideIn：‘root’}） 注解了，就不需要在模块里的providers 声明
+
+
+<ng-container *ngFor="let page of [(housingPage$ | async)]">
+ 带$ 表示传递的是流，习惯。  
+ 带async 不用写subscribe
+
+
+组件嵌套ng-content
+
+调试
+？？？？？？？？？？？？？？？？
+/**
+ * 安置房状态
+ */
+export type AnZhiFangState = ChuangJianStateModel | ChuZuStateModel;
+
+
+///////////////////////////////重构////////////////////////////////////////////
+
+ngOnInit(): void {
+      // 加载区/县房源统计信息 
+     //注释的为重构后
+      /*this.districtService.listDistricts().pipe(
+         map(districts => this.mapToNzCascaderOption(districts))
+      ).subscribe(districts => {
+         console.log(districts);
+         this.districtOptions = districts;
+      });*/
+      this.districtService.listDistricts().pipe(
+         map(districts => districts.map(district => ({
+            value: district.code,
+            label: district.mingCheng,
+            isLeaf: false,
+            children: district.subDistricts.map(d => ({value: d.code, label: d.mingCheng, isLeaf: true}))
+         })))
+      ).subscribe(districts => {
+         console.log(districts);
+         this.districtOptions = districts;
+      });
+      /*this.districtService.listDistricts().pipe(
+               map(districts => this.mapToNzCascaderOption(districts))
+            ).subscribe(districts => {
+               console.log(districts);
+               this.districtOptions = districts;
+      });*/
+   }
+
+   private mapToNzCascaderOption(districts: Array<DistrictModel> = []) {
+       return   districts.map(district => ({
+         value: district.code,
+         label: district.mingCheng,
+         isLeaf: false,
+         children: district.subDistricts.map(d => ({value: d.code, label: d.mingCheng, isLeaf: true}))
+      }));
+      /*return districts.map(({code, mingCheng, subDistricts}) => ({
+         value: code,
+         label: mingCheng,
+         isLeaf: subDistricts == null || subDistricts.length < 1,
+         children: this.mapToNzCascaderOption(subDistricts)
+      }));*/
+   }
+
+
+hbzhb
+123
