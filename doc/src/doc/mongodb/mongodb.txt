@@ -1,0 +1,29 @@
+e9^7R^L%
+
+步驟
+启动登录
+use admin
+db.createUser({ user: "admin", pwd: "123456", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] })
+
+db.createUser({user: "root",pwd: "123456", roles: [ { role: "root", db: "admin" } ]})
+启动加上--auth，重新启动 
+登录
+./mongo -port 27017 -u "admin" -p "123456" --authenticationDatabase "admin"
+user admin
+db.auth("admin","123456")
+
+创建其他数据库账号（业务）
+
+use hzfc_anzhifang；
+
+db.createUser( {   user: "anzhifang",   pwd: "anzhifang2020",   roles: [{role: "dbOwner", db: "hzfc_anzhifang"}]   }   )
+
+
+
+注意要 --auth 启动后 执行
+db.auth('anzhifang','anzhifang2020')
+ 
+
+停止 db.shutdownServer()
+
+删除用户 db.dropUser("anzhifang");
