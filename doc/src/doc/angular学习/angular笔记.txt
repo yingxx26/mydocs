@@ -1,7 +1,11 @@
 方括号数据绑定
 小括号事件绑定
 
-生成组件 ng g c  fangyuan/HousingForm
+生成路由  ng g m fangyuan-routing
+
+生成模块  ng g m fangyuan
+
+生成组件 ng g c JsxmListing
 
 export * from './housing-form.component';   导出给别人使用
 
