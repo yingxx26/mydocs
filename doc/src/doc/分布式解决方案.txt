@@ -1,0 +1,3 @@
+分布式session解决方案: 
+1,token  (springsecurity) 
+2,spring-session
