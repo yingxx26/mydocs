@@ -1,3 +1,9 @@
 分布式session解决方案: 
 1,token  (springsecurity) 
 2,spring-session
+
+跨域问题
+1，设置response 头
+2，nginx
+3，zuul
+4，jsonp 不支持post
