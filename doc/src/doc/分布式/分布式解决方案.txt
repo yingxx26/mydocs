@@ -12,7 +12,7 @@
 
 分布式锁
 zookeeper 临时节点
-redis
+redis setnx  key
 
 注解：
 限流
