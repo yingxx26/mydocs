@@ -11,8 +11,8 @@
 4，jsonp 不支持post
 
 分布式锁
-zookeeper 临时节点
-redis setnx  key
+zookeeper 临时节点  释放锁：事件通知
+redis setnx  key  释放锁：删除key
 
 注解：
 限流
