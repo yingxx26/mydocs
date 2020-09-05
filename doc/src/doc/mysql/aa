@@ -1,4 +1,4 @@
 show status  “slow query”
 
 主从复制 mysql的bilog
-读写分离 mycat
+读写分离 mycat 虚拟数据库 动态数据源
