@@ -6,3 +6,5 @@ show status  “slow query”
 微服务：数据库垂直拆分 分布式事务
 shading jdbc 客户端
 mycat服务端
+
+一般单裤分表
