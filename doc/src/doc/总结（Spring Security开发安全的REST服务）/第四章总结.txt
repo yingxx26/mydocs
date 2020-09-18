@@ -1,4 +1,5 @@
 1，认证流程 filter-》manager-》provider-》userdetialservice-》userdetial-》authation-》securitycontext
+加自定义过滤器 http.addFilterBefore(自己的filter,UsernamePasswordAuthenticationFilter.class)
 2，图形验证码 -》加过滤器       @ConditionalOnMissingBean(name = "imageValidateCodeGenerator") 这个配置是关键
 
 
