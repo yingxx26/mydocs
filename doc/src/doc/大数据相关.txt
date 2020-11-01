@@ -6,11 +6,6 @@ shell ，机架感知（重写类，core-site.xml，打jar包到lib）
 离线统计用hive
 
 
-统计用途，一部分 是指标
-  一部分是提供  开发商和中介的  权限服务
-
-项目概况 ，流程图
-
 flume到kafka，一份到hdfs，hive分区表，离线统计 
                         一份到sparkstreaming ，实时统计，当天
 
@@ -28,15 +23,12 @@ sparkui
 
 hive 新增用户，活跃数，最常用的付款方式，一周每天登陆用户，连续N周
 
-生产环境内存
-离线环境 数据倾斜
-
 
 6台服务器 800qps 2千万
 4g  2千万    100G  （15台8g8核）
 1G 4000万数据   etl 3分钟  切分训练集5分钟  训练3分钟
 
-购房人，合同，房屋 宽表    即时->
+
 
 增加map数设置mapered.map.tasks大
 减小map数 设置mapered.min,split.sizde小
@@ -141,16 +133,9 @@ Synchronized  monitor监视器锁
 cas violate 保证线程安全   
 给你举个实际的场景，让你选择一个GC策略
 用户服务搞个小项目
-Aqs  线程 未获得锁加入 双向队列 尾部      
-单例设计模式
-关于SparkStreaming的checkpoint的弊端https://qindongliang.iteye.com/blog/2356634
-jdk实现同一个接口，对方法加强，  cglib子类继承父类，对方法加强
-扩容看下
 
-TreeMap和LinkedHashMap
-线程池（阻塞队列）
-CyclicBarrier原理
-hive调优https://blog.csdn.net/yeweiouyang/article/details/45665727
+
+关于SparkStreaming的checkpoint的弊端https://qindongliang.iteye.com/blog/2356634
 
 
 
@@ -178,8 +163,34 @@ spark数据倾斜：
 mapjoin，broadcast（大表join小表）
 采样key ，分开join（少数key,大表join大表)
 随机数扩容（多数key，大表join大表）用SQL模拟
- 
-redis穿透，雪崩
 
-乐观锁  预约看房 更新 普通索引 
- 
+
+机器学习  训练集，创建管道加入（分词，特征向量，算法）超网格参数设置， 评估器  ， 预测
+逻辑回归（sigmod函数） 决策树（商） 多层感知机（中间层sigmod，输出层softmax） 支持向量机（最近点到分割面最大距离） 线性回归（点到直线的距离差服从正太分布）
+神经网络（概念）   正向传播求损失，反向传播调整 ， 激活函数（映射成非线性）
+推荐系统 矩阵和低秩矩阵的差 正则化
+
+
+parquet  压缩比高，分区过滤，列修剪
+
+ 推荐算法，同学文档，scala，模型训练的时候，写数据库，kafka java端和scala端，数据倾斜，加机器，加并行度，persist，复用，提高reduce并行度，减少cache比例，map输出端合并（设置hashshfulle ，spark.shuffle.consolidateFiles", "true")），
+ TroubleThooting  reduce buffer 调太高，导致oom
+ GC导致的shuffle文件拉取失败 重试时间重试次数
+Sql太复杂，栈内存溢出。 分条sql，增加内存
+
+数据倾斜 过滤key，提高shufull 并ing度
+
+
+
+Hive on spark 把hive查询从mapreduce 的mr (hadoop 计算引擎)操作替换为spark rdd 操作
+
+Dataframe  是有结构信息的，rdd没有
+
+Sql  编译不报错，运行时才交验
+Dataframe
+Dataset
+
+
+Spark standalone 集群只是类似于rm。真正运行在jvm
+Spark yarn 不需要集群 （client driver运行在client，cluster运行在yarn）
+

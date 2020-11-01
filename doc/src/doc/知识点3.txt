@@ -1,9 +1,6 @@
-struct2      xmlÅäÖÃaction£¬Â·¾¶·½·¨Ãû result·µ»Øjsp
-springMVC   ×¢½â requestmaping ÇëÇóÂ·¾¶    ÅäÖÃÊÓÍ¼£¬·µ»ØÒ³ÃæÂ·¾¶
-springbean  xmlÅäÖÃÎÄ¼þ¡£É¨Ãè autowire
+
 ·ºÐÍ        °ÑÀàÐÍÐ£Ñé·Åµ½±àÒëÆÚ£¬±ÜÃâÇ¿ÖÆ×ª»»±¨´í
-hashmap     Êý×éºÍÁ´±í£¬ÎÞÐò£¬ÔÊÐínull£¬¼ÆËãhashcode¾ö¶¨´æ´¢Î»ÖÃ  ³õÊ¼ÈÝÁ¿16£¬À©ÈÝÊ±2µÄÃÝ´Î£¬±£Ö¤2µÄÃÝ´ÎÊÇÒòÎª&length-1  ¼ÓÔØÒò×ÓÄ¬ÈÏ0.75£¬Ô½´ó£¬ÔªËØÔ½¶à¿Õ¼äÀûÓÃÂÊ¸ß£¬³åÍ»Ô½´óÁ´±íÔ½³¤£¬²éÑ¯Ð§ÂÊÔ½µÍ
-treemap      ¶þ²æÊ÷£¬ÓÐÐò£¬²»ÔÊÐínull
+
 
 currenthashmap  ·Ö¶ÎËøÈõÒ»ÖÂÐÔ£¨ÀÖ¹ÛËøcas£©  get²»¼ÓËø final£¬violate
 
@@ -14,6 +11,4 @@ sql        inoodbÖ§³ÖÊµÎï£¬ÐÐ¼¶Ëø   mysqldumpslow slow.log  Ë÷Òý £¬¶àÁÐË÷Òý£¬¸²¸
 Ö§¸¶±¦   Ö§¸¶±¦´´½¨Ó¦ÓÃappid ¹«Ô¿Ë½ Ô¿³×  Ö§¸¶±¦¹«Ô¿ £¬¶©µ¥id£¬½ð¶î£¬ÉÌÆ·ÁÐ±í £¬ Éú³É¶þÎ¬Âë £¬É¨Âë»Øµ÷ÑéÖ¤£¬¸üÐÂ¶©µ¥×´Ì¬
  
 jvm         ÄÚ´æÄ£ÐÍ ³ÌÐò¼ÆÊýÆ÷£¬¶Ñ£¨¶ÔÏó£¬Êý×é£©£¬Õ»£¨ÁÙÊ±±äÁ¿£¬ÒýÓÃ£©£¬·½·¨Çø£¨ÀàÐÅÏ¢£©£¬Ë«Ç×Î¯ÅÉ»úÖÆ£¨£©£¬ÐÂÉú´ú¸´ÖÆËã·¨£¨´æ»îÂÊµÍ¸´ÖÆÐ¡£¬Ð§ÂÊ¸ß£¬ÀË·ÑÄÚ´æ£©£¬ÀÏÄê´ú±ê¼ÇÕûÀíËã·¨£¨Ð§ÂÊµÍ£©£¬-XX:+HeapDumpOnOutOfmenoryError -XX:HeapDumpPath= .dump  -XX:PrintGCDEATILs -xms512 -xmx512m  ¾¡Á¿¼õÉÙfullgc      ×î´óÄÚ´æºÍ×îÐ¡ÄÚ´æÒ»Ñù£¬µ÷¸ßÄÚ´æ£¨Ä¬ÈÏÊÇ4·ÖÖ®1£©   µ÷¸ßÐÂÉú´ú£¨Ä¬ÈÏ1:2£©
-
-Ïß³Ì³Ø     ¶àÁË²¢·¢¸ß£¬Õ»Éî¶ÈµÍ
 

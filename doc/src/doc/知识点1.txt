@@ -2,9 +2,6 @@
 
 项目流程（数据采集flume（source channel sink），处理 spark，展示hbase javaweb） （还有巴巴运动网）
 
-优化 静态化（添加修改产品时生成静态页面）， 二级缓存（@cache） ，权限 aop
-
-遇到困难（数据倾斜，java 100%内存hashmap环）
 
 
 知识点：
@@ -16,7 +13,6 @@ direct读取kafka保证高可用，不需要再保存一份日志
 新生代 复制， 老年代标记压缩
 新生代到老年代 1：新生代surver满，触发minorgc 到老年代，装不下fullgc 2：长期存活的对象，3：大对象
 
-spark启动原理    rdd（可以恢复，溢出在磁盘）  
 
 数据倾斜，加机器，加并行度spark.default.parallelism SparkConf conf = new SparkConf().set("spark.default.parallelism", "500")
 ，persist，复用，提高reduce并行度，减少持久化比例，map输出端合并（设置hashshfulle ，spark.shuffle.consolidateFiles", "true")），
@@ -50,11 +46,9 @@ Synchronized  monitor监视器锁
 
 Aqs  线程 未获得锁加入 双向队列 尾部      cas violate 保证线程安全   
 
-线程池（阻塞队列）
 
 堆栈结构  内存模型 程序计数器，堆（对象，数组），栈（临时变量，引用），方法区（类信息），双亲委派机制（启动，扩展，系统），    最大内存和最小内存一样，调高内存（默认是4分之1）   调高新生代（默认1:2）
 
-购物车session ，sessionid放cookie里实现 关闭浏览器购物车不丢失
 
 1.接口是公开的，里面不能有私有的方法或变量，是用于让别人使用的，而抽象类是可以有私有方法或私有变量的，
 2.接口不包含构造方法，抽象类里可以包含构造方法。    
@@ -62,26 +56,18 @@ Aqs  线程 未获得锁加入 双向队列 尾部      cas violate 保证线程安全
 4.还有，接口可以实现多重继承，而一个类只能继承一个超类，但可以通过继承多个接口实现多重继承，接口还有标识（里面没有任何方法，如Remote接口）和数据共享（里面的变量全是常量）的作用.
 5.如果是抽象类要实现接口，可以实现部分或者一个都不实现就行，要是具体类就必须实现所有的方法
 
-sql
 
-工具：
-           
-springMVC   前端控制器拦截   转发到  处理器映射器， 映射到哪个handler（action，service，dao） ，在调用handler，  返回 modelandview ，渲染在页面上
+Aqs 双向队列 cas violate java代码控制状态  未获得锁加入等待队列
 
-Structs2  请求被FilterDispatcher接收，根据struts.xml配置，找到需要调用的Action类和方法，service，dao，返回 页面
+Countdownlatch 避免zookeeper未启动，就调用客户端报错
 
-机器学习  训练集，创建管道加入（分词，特征向量，算法）超网格参数设置， 评估器  ， 预测    
-逻辑回归（sigmod函数） 决策树（商） 多层感知机（中间层sigmod，输出层softmax） 支持向量机（最近点到分割面最大距离） 线性回归（点到直线的距离差服从正太分布）
-神经网络（概念）   正向传播求损失，反向传播调整 ， 激活函数（映射成非线性）
-推荐系统 矩阵和低秩矩阵的差 正则化
- 
-
-parquet  压缩比高，分区过滤，列修剪
-
-商品类别模块 前端递归 
+cms老年代
 
 
- 
- 
-在对RDD执行shuffle算子时，给shuffle算子传入一个参数，比如reduceByKey(1000)，该参数就设置了这个shuffle算子执行时shuffle read task的数量。对于Spark SQL中的shuffle类语句，比如group by、join等，需要设置一个参数，即spark.sql.shuffle.partitions，该参数代表了shuffle read task的并行度，该值默认是200，对于很多场景来说都有点过小。
- 
+堆 实时图像 visual vm
+堆 分类 jconsole
+堆 对象  visual vm  dump
+Gc实时 jstat  -gcutil 167440 1000 100
+Gc实时图像 visual vm
+Gc日志
+

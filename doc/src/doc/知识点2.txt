@@ -1,30 +1,10 @@
 
-用户
-商品
-订单 
-
-问题：cpu100
-
-
-
-
-新闻  搜索房源 房源详情 地图找房 网上预约  网上签约 统计分析   
-
-房源详情 和 网上预约       比较简单 ，访问量大 ，两三台，缓存
-
 网上签约                         选中房子 ， 填写用户信息，调用三方接口查档，婚姻，填写价格、银行，根据模板生成合同，
 
 统计分析                         统计新增用户，用户最喜欢的楼盘，用户最近一次预约时间，最近几天预约次数，  一开始直接sparksql，后来用elasticsearch
 
-
-领域建模
-
-herbernate 改源码
-
-mybatis  委派 装饰器 工厂  代理
 如何循环
 动态生成组件
-
 <component :is="item.component" v-for="item in items" style="margin-button: 10px;" @rainData="rainData"></component>
 
 
@@ -47,15 +27,6 @@ GET参数通过URL传递，POST放在Request body中。
 段式管理程序，页式管理文件
 
 
-Sql去重
-日期类线程安全  Swagger
-
-给比人提供接口 jar
-Springcloud  的网关
-
-Jwt 三个组成部分 
-
-桥接模式：分离抽象和实现
 
 适配器是为了 转换匹配，复用，（能不用，就不用）,需要改接口（每次接口不同无法递归）
 装饰器 是为了增加功能（对原来对象无感知），顺序可以随意改变，不需要改接口（支持递归组合）
@@ -71,25 +42,14 @@ Jwt 三个组成部分
 三层架构：外观模式和工厂模式,桥接模式
 
 
-
-数据库死锁  二级缓存问题  锁和事务范围问题
-
-mybatis  装饰器 ，代理
-
 画uml 画流程图 看项目 写文档
 优惠券 策略，装饰器模式  （不同的节日，季节）
 不同会员等级购买产品价格计算
 房贷计算器
 
-如何通过实例id查询 文档
 
 用例图 :  接口
 类图： 实体类
 活动图 : 业务逻辑
 顺序图 : 无异常逻辑
 
-工作流查找下一个流程
-
-https://github.com/yingxx26/erp-pro
-https://github.com/yingxx26/roncoo-pay
-https://github.com/yingxx26/jeesite

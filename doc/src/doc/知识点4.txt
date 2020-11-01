@@ -1,0 +1,17 @@
+下载文件IOUtils.copy(input,output)
+
+记住我功能  认证成功 同时写入数据库和cookie
+figen 超时   设置ribbon时间
+figen 和 zuul 默认整合了ribbon 
+
+ 重入锁 （递归）
+synchized 读读互斥
+
+ 堆是共享的，栈是不共享的
+
+老年代用标记整理 不用复制 ，用为空间大
+新生代 复制算法 解决空间碎片
+
+初始堆大小 决定回收次数  垃圾回收算法 决定吞吐量（停顿时间）
+jdk 动态代理 需要实现接口 ， 因为需要继承proxy，当时Java只能单继承，所以只能实现接口
+cglib 重写子类 ，不能重写final
