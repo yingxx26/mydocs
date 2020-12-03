@@ -13,3 +13,8 @@ soar E签宝
 持续交付
 
 联合登陆
+
+规格表设计
+redis key设计
+rabbitmq 工作模式
+优惠券表设计
