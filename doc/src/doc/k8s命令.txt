@@ -1,0 +1,15 @@
+kubectl create  -f   xx.yaml  创建资源、启动
+kubectl apply   -f   xx.yaml  变更资源
+kubectl delete  -f   xx.yaml  变更资源
+
+kubectl get all   查看全部
+kubectl get svc   查看service
+kubectl get po    查看pod
+kubectl get po -dev   查看pod 限定namespace
+kubectl exec -it  pod-id   /bin/sh  登录 pod
+
+kubectl descirbe pod  pod-id  查看
+
+kubectl logs pod/pod-id 查看日志
+
+printenv    登录 pod后，打印环境变量
