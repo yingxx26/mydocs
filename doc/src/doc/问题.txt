@@ -4,9 +4,13 @@
 --2，rabbitmq源码， （利用模板设计模式重构分布式事务代码）
 --1，jdk8  流新特性
 
+工作流驳回
+1，候选人 taskService.setAssignee("36161c71-4795-11eb-95eb-aeed5c486818",null);
+2，普通 activitiUtil.backProcess(processInstanceId, id);
+
 一 ：高级
 联合登陆
-工作流并行和会签  退回
+
 soar E签宝
 
 龙国支付
