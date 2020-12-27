@@ -4,28 +4,32 @@
 --2，rabbitmq源码， （利用模板设计模式重构分布式事务代码）
 --1，jdk8  流新特性
 
-工作流驳回
-1，候选人 taskService.setAssignee("36161c71-4795-11eb-95eb-aeed5c486818",null);
-2，普通 activitiUtil.backProcess(processInstanceId, id);
+--工作流驳回
+--1，候选人 taskService.setAssignee("36161c71-4795-11eb-95eb-aeed5c486818",null);
+--2，普通 activitiUtil.backProcess(processInstanceId, id);
 
 一 ：高级
-联合登陆
+
+接入第三方（联合登陆） 1 ,FEBS Cloud 2,liugh-parent 3,paascloud-master
+提供第三方接入（OpenAPI平台）1,cola-cloud
+
 
 soar E签宝
 
-龙国支付
+龙国支付roncoo-pay
 
 文档 画图
 设计模式
 博客
-
+mybatis
 
 二：架构
 1：业务架构
 规格表设计
 redis key设计
 优惠券表设计
-
+imooc-coupon
+mall
 订单流转（状态模式）
 优惠券（装饰器模式）
 支付方式（策略模式）
