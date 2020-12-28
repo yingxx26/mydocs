@@ -1,0 +1,6 @@
+密码模式  localhost:8101/oauth/token  1，Authorization:clientid+clientsecret    2, username,password  3,grant_type:password
+授权码模式
+1,http://192.168.73.106:8301/auth/oauth/authorize?response_type=code&client_id=clientid&redirect_uri=http://www.baidu.com
+2,页面输入账号密码,获得授权码
+3,localhost:8101/oauth/token   1，Authorization:clientid+clientsecret    2, code: 授权码 3,grant_type:authorization_code
+
