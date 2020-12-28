@@ -1,6 +1,3 @@
 appid 区分机构 不可以改变
 APPsecert 加密  可以改变
 appid +APPsecert   生产token
-
-
-springcache  二级缓存
