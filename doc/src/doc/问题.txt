@@ -10,8 +10,8 @@
 
 一 ：高级
 
-接入第三方（联合登陆） 1 ,FEBS Cloud 2,liugh-parent 3,paascloud-master
-提供第三方接入（OpenAPI平台）1,cola-cloud
+接入第三方（联合登陆） 1 ,FEBS Cloud 2, paascloud-master
+提供第三方接入（OpenAPI平台）
 
 
 soar E签宝
