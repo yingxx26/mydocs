@@ -4,3 +4,7 @@
 2,页面输入账号密码,获得授权码
 3,localhost:8101/oauth/token   1，Authorization:clientid+clientsecret    2, code: 授权码 3,grant_type:authorization_code
 
+
+签名防止篡改,公钥私钥认证
+微服务认证密码模式，第三方授权授权码模式
+
