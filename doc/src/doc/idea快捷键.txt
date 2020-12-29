@@ -1,11 +1,19 @@
-显示uml结构图 ctrl +shift +alt+ U
+try/catch快捷键                           Ctrl + Alt + t
 
-抽取方法 ctrl+alt+m
+查找当前文件在左边的目录位置                 ALT + F1
+
+按代码逻辑逐步放大选择范围	                  CTRL +W
+
+找到当前方法的调用的位置	               ALT+F7
+
+抽取方法                                 ctrl+alt+m
+
+格式化                              ctrl+shift+space
+
+去除无用引入的包                           ctrl+alt+o
 
 块编辑 按住alt，点击鼠标左键拖动
 
-自定义格式化 ctrl+shift+x
 
-去除无用引入的包 ctrl+alt+o
-
- try/catch快捷键 Ctrl + Alt + t
+显示uml结构图                            ctrl +shift +alt+ U
+打开、隐藏左侧边栏	                      ALT+1
