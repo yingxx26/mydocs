@@ -1,0 +1,12 @@
+- redisTemplate.opsForValue() ：操作字符串
+- redisTemplate.opsForHash() ：操作hash
+- redisTemplate.opsForList()：操作list
+- redisTemplate.opsForSet()：操作set
+- redisTemplate.opsForZSet()：操作zset，可排序的set
+
+- String：等同于java中的，`Map<String,String>`
+- hash：等同于java中的：`Map<String,Map<String,String>>
+- list：等同于java中的`Map<String,List<String>>`
+- set：等同于java中的`Map<String,Set<String>>`
+- sort_set：可排序的set
+
