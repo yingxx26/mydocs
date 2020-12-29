@@ -5,7 +5,7 @@
 3,localhost:8101/oauth/token   1，Authorization:clientid+clientsecret    2, code: 授权码 3,grant_type:authorization_code
 
 
-签名防止篡改,公钥私钥认证
+
 微服务认证密码模式，第三方授权授权码模式
 
 密码模式也可以用jwt
@@ -13,6 +13,7 @@
 jwt长令牌放redis
 短令牌放cookie
 为什么？因为即使 退出了，redis里面已经没有了，前端的短令牌被盗也不会有安全问题
+
 
 服务器给出的公钥都是一样的
 
