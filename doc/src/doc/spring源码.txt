@@ -3,9 +3,6 @@ XmlBeanFactory
 doLoadBeanDefinitions . doLoadDocument转化为doc
 registerBeanDefinitions  doRegisterBeanDefinitions 解析 parseBeanDefinitions  注册registerBeanDefinition
 模板模式 抽象类里面抽象方法，子类重写
-委派模式 leader和follower（两个以上）实现统一接口，leader持有follower引用
-
-
 
 doGetBean 加载
 factorybean
