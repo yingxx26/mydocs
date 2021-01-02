@@ -1,0 +1,13 @@
+nio  同步非阻塞，边抽烟边一个一个敲门问别人拉好了么
+aio 异步非阻塞，边抽烟，等别人拉好了告诉我可以去拉了
+
+
+nioeventloop的run就是while(true)
+select 就是accept
+channel就是socket
+bytebuf就是输入输出流
+pipeline是逻辑业务管道
+channelhandler是逻辑
+
+
+bind是入口，创建初始化channel，添加handler到pipeline，添加pipeline到channel，注册chnnel到selector
