@@ -1,0 +1,7 @@
+mybatis
+1，映射接口和xml ，map(string,mapstatement)   方法包名，和方法名作为 key。动态代理
+2 缓存  装饰器模式
+一级缓存 sqlsession级别
+二级缓存 mapper级别（关联查询有问题）
+3 日志 装饰器    if (log.isDebugEnabled()) {
+
