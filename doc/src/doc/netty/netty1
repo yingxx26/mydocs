@@ -1,7 +1,7 @@
 nio  同步非阻塞，边抽烟边一个一个敲门问别人拉好了么
 aio 异步非阻塞，边抽烟，等别人拉好了告诉我可以去拉了
 
-
+一，组件结构
 nioeventloop的run就是while(true)
 select 就是accept
 channel就是socket
@@ -9,5 +9,27 @@ bytebuf就是输入输出流
 pipeline是逻辑业务管道
 channelhandler是逻辑
 
+二，流程
+bind是入口，创建初始化channel，添加handler到pipeline，添加pipeline到channel，注册channel到NioEventLoop的selector
+nioeventloop创建，启动，执行
+   nioeventloop.run
+     for(;;){
+         select();轮询注册的事件
+             阻塞select
+             空轮询
+         processselectedkeys();处理事件
+         runalltasks();执行任务
+     }
 
-bind是入口，创建初始化channel，添加handler到pipeline，添加pipeline到channel，注册chnnel到selector
+pipeline
+1 在channel创建时候创建
+   构建channelhandlercontext作为链表节点
+
+三，问题
+1空轮询 超过512次，重建selector，重新注册事件
+2客户端channel 注册read事件 数据
+服务端channel 注册accept事件 连接
+3保证异步川行无锁  task放入queue
+4新连接接入  select轮询出accept事件
+5新连接注册  next选出nioeventloop，注册到nioeventloop的selector上
+6  pipeline 顺序inbound顺，outbound倒，异常 顺    6-5责任链模式 6-3自定义handler
