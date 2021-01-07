@@ -25,6 +25,10 @@ pipeline
 1 在channel创建时候创建
    构建channelhandlercontext作为链表节点
 
+
+byte
+pooledbytebuffer  threadlocal缓存
+
 三，问题
 1空轮询 超过512次，重建selector，重新注册事件
 2客户端channel 注册read事件 数据
