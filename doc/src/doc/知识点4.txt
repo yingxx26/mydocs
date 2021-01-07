@@ -4,7 +4,7 @@
 figen 超时   设置ribbon时间
 figen 和 zuul 默认整合了ribbon 
 
- 重入锁 （递归）
+重入锁 （递归）
 synchized 读读互斥
 
  堆是共享的，栈是不共享的

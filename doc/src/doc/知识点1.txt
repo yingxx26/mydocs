@@ -1,21 +1,5 @@
-项目：
-
-项目流程（数据采集flume（source channel sink），处理 spark，展示hbase javaweb） （还有巴巴运动网）
 
 
-
-知识点：
-
-一次可执行task（并行度）（core数）  一次 要执行task（默认hdfs数据的block数，每个block128M）
-
-direct读取kafka保证高可用，不需要再保存一份日志
-
-新生代 复制， 老年代标记压缩
-新生代到老年代 1：新生代surver满，触发minorgc 到老年代，装不下fullgc 2：长期存活的对象，3：大对象
-
-
-数据倾斜，加机器，加并行度spark.default.parallelism SparkConf conf = new SparkConf().set("spark.default.parallelism", "500")
-，persist，复用，提高reduce并行度，减少持久化比例，map输出端合并（设置hashshfulle ，spark.shuffle.consolidateFiles", "true")），
 
 hashmap原理 concurrenthashmap1.7锁分段  1.8 红黑树    
 如果没有初始化就先调用initTable（）方法来进行初始化过程
