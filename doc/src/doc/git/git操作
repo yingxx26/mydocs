@@ -1,0 +1,16 @@
+一，同步 fork原创者的代码：
+1，到项目目录中
+> git remote add jboltm https://code.demo.com/abc.git
+
+> git fetch jboltm
+2，idea  ->git ->merge，选中remote
+
+二，
+ 1，小弟创建一个分支并在分支上开发
+  idea ->git ->Branches
+ 2, 小弟提交
+  idea ->git ->Push
+ 3，组长获取分支
+  idea ->git ->Pull，选中分支
+ 4，组长合并分支
+  idea ->git ->merge，选中remote
