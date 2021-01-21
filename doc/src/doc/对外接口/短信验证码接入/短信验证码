@@ -1,4 +1,4 @@
-1，创建生成图形验证码接口，存入session，发送手机  @ResponseBody
+1，创建生成短信验证码接口，存入session，发送手机  @ResponseBody
                                               @GetMapping("sms")
    加入免认证 ，放在  public class FebsCloudResourceServerConfigure extends ResourceServerConfigurerAdapter  这个下面，是因为他是提供对外服务的
 2，创建过滤器，配置，SmsCodeAuthenticationFilter

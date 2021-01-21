@@ -1,6 +1,5 @@
-1，创建生成短信验证码接口，存入session，返回前端
+1，创建生成图形验证码接口，存入session，返回前端
    加入免认证 ，放在  public class FebsCloudResourceServerConfigure extends ResourceServerConfigurerAdapter  这个下面，是因为他是提供对外服务的
 2，创建
   校验验证码逻辑 validateCodeFilter
-  通过验证码获取用户信息逻辑 SmsCodeAuthenticationToken , SmsCodeAuthenticationProvider , SmsCodeAuthenticationFilter
-  把validateCodeFilter ，smsCodeAuthenticationProvider，SmsCodeAuthenticationFilter 加入springsecurity
+  把validateCodeFilter   加入springsecurity,配置在UsernamePasswordAuthenticationFilter之前
