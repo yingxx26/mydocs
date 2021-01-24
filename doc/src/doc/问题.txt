@@ -8,15 +8,20 @@
 --1，候选人 taskService.setAssignee("36161c71-4795-11eb-95eb-aeed5c486818",null);
 --2，普通 activitiUtil.backProcess(processInstanceId, id);
 
+--接入第三方（联合登陆） 1 ,FEBS Cloud
+--提供第三方接入（OpenAPI平台）
+
+--支付宝源码 加签 加密
+
 一 ：高级
 
-接入第三方（联合登陆） 1 ,FEBS Cloud 2, paascloud-master,3 xcEduService01
-提供第三方接入（OpenAPI平台）
-
-
-soar E签宝
-
+每特
 龙国支付roncoo-pay
+soar E签宝
+物业资金
+
+
+
 
 文档 画图
 设计模式
