@@ -1,6 +1,6 @@
 下载文件IOUtils.copy(input,output)
 
-记住我功能  认证成功 同时写入数据库和cookie
+
 figen 超时   设置ribbon时间
 figen 和 zuul 默认整合了ribbon 
 

@@ -10,3 +10,5 @@
 - set：等同于java中的`Map<String,Set<String>>`
 - sort_set：可排序的set
 
+
+线程安全问题

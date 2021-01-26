@@ -30,3 +30,6 @@
  八，密码授权模式登陆
  1，访问/oauth/token之前， 首先basic认证（BasicAuthenticationFilter），通过clientid获取clientdetail
  2，然后访问 TokenEndpoint 的 /oauth/token，通过username获取UserDetails -》Authentication-》OAuth2AccessToken
+
+
+记住我功能  认证成功 同时写入数据库和cookie
