@@ -1,6 +1,8 @@
 nio  同步非阻塞，边抽烟边一个一个敲门问别人拉好了么
 aio 异步非阻塞，边抽烟，等别人拉好了告诉我可以去拉了
 
+
+
 一，组件结构
 nioeventloop的run就是while(true)
 select 就是accept
@@ -37,3 +39,11 @@ pooledbytebuffer  threadlocal缓存
 4新连接接入  select轮询出accept事件
 5新连接注册  next选出nioeventloop，注册到nioeventloop的selector上
 6  pipeline 顺序inbound顺，outbound倒，异常 顺    6-5责任链模式 6-3自定义handler
+
+7，
+长连接：消息推送，websocket，http1.1
+短链接：http1.0
+如果HTTP1.1版本的HTTP请求报文不希望使用长连接，则要在HTTP请求报文首部加上Connection: close
+
+8，粘包，拆包
+以特殊字符串结尾。 服务器加个hangdeler

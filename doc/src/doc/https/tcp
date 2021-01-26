@@ -1,0 +1,14 @@
+三次握手：
+
+ 第一次握手：client syn 2322326583 （SYN_SENT） —> server
+ 第二次握手：server syn 3573692787, ack 2322326583 + 1 （SYN_RCVD） —> client
+ 第三次握手：client ack 3573692787 + 1 （ESTABLISHED）-->server （ESTABLISHED）
+
+
+四次挥手：
+   第一次挥手：client FIN （FIN_WAIT_1） —> server
+   第二次挥手：server ACK （CLOSE_WAIT） —> client（FIN_WAIT_2）
+   第三次挥手：server FIN （LAST_ACK） —> client
+   第四次挥手：client ACK （TIME_WAIT） —> server（CLOSE）
+
+为啥多一次：服务端应答时，还有数据在传输
