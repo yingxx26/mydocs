@@ -1,0 +1,19 @@
+跨域问题
+1，设置response 头
+2，nginx
+3，zuul
+4，jsonp 不支持post
+5，HTTP client、转发 （两次请求）
+6，CORS
+
+对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个Origin字段。
+
+下面是一个例子，浏览器发现这次跨源AJAX请求是简单请求，就自动在头信息之中，添加一个Origin字段。
+
+GET /cors HTTP/1.1
+Origin: http://m.xin.com
+Host: api.alice.com
+Accept-Language: en-US
+Connection: keep-alive
+User-Agent: Mozilla/5.0...
+上面的头信息中，Origin字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。

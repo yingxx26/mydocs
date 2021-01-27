@@ -1,22 +1,3 @@
-分布式session解决方案: 
-1,token  (springsecurity) 
-2,spring-session
-
-
-
-跨域问题
-1，设置response 头
-2，nginx
-3，zuul
-4，jsonp 不支持post
-
-分布式锁
-zookeeper 临时节点  释放锁：事件通知
-redis setnx  key  释放锁：删除key
-
-注解：
-限流
-幂等性
 
 哨兵：主从
 
@@ -24,11 +5,6 @@ redis setnx  key  释放锁：删除key
 定时任务宕机 记录是否执行成功
 
 订单 预先生成
-
-
-分布式事务 分组事务id 第一步不提交事务
-
-两阶段和三阶段  三阶段 先询问，不阻赛
 
 负载均衡 dubbuo  本地负载均衡
 
