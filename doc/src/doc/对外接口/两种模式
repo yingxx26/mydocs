@@ -5,7 +5,6 @@
 3,localhost:8101/oauth/token   1，Authorization:clientid+clientsecret    2, code: 授权码 3,grant_type:authorization_code
 
 
-
 微服务认证密码模式，第三方授权授权码模式
 
 密码模式也可以用jwt
