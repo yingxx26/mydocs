@@ -1,7 +1,7 @@
 show status  “slow query”
 
-主从复制 mysql的bilog
-读写分离 mycat 虚拟数据库 动态数据源
+主从复制 -》mysql的bilog
+读写分离 -》mycat 路由转发 虚拟数据库 动态数据源
 集群id uuid 步长 redis 雪花算法
 微服务：数据库垂直拆分 分布式事务
 shading jdbc 客户端
