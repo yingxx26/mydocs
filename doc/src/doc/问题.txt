@@ -37,7 +37,7 @@ sentinel 源码
 持续交付
 
 
-物业资金:  需求分析里的分摊和结息
+物业资金:  需求分析里的分摊com.hzfc.soar.wyjj.fzgn.zjyft.action.ZjyftAction#ftfy  和结息
 
 文档 画图
 设计模式

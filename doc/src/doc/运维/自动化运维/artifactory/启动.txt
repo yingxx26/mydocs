@@ -1,0 +1,8 @@
+µ½E:\Program Files (x86)\Artifactory\artifactory-oss-4.1.2\bin
+
+µã»÷artifactory.bat
+
+·ÃÎÊhttp://localhost:8081/artifactory
+
+admin
+password
