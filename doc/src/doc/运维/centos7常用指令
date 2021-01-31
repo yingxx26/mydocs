@@ -8,3 +8,7 @@ service iptables restart
 # [root@thinkpig007 ~]# vi /etc/profile
  使配置生效
   [root@thinkpig007 bin]# source /etc/profile
+
+
+4看端口号通不通
+telnet localhost 23

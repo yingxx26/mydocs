@@ -1,0 +1,2 @@
+service docker restart
+docker run --name artifactory-oss-6.18.1   -p 8087:8081  docker.bintray.io/jfrog/artifactory-oss:6.18.1
