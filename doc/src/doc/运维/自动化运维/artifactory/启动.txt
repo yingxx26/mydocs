@@ -1,6 +1,6 @@
 一，启动http://localhost:8081
 1，访问
-到E:\artifactory\artifactory-oss-6.18.1\bin
+到E:\zdhYunWei\artifactory\artifactory-oss-6.18.1\bin
 点击artifactory.bat
 访问http://localhost:8081/artifactory
 

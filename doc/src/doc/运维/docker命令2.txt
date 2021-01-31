@@ -1,8 +1,17 @@
-docker查看日志
+docker查看日志 ：docker logs   id
 
-docker logs   id 
+docker启动compose  ：docker-compose up -d
 
+启动docker  ： service docker restart
 
-docker启动compose
+查看所有镜像：docker images
 
-docker-compose up -d
+查看所有容器： docker ps -a
+
+进入容器logstash ：docker exec -it logstash /bin/bash
+
+删除docker中的镜像：docker rmi 镜像id
+
+删除docker中的容器: docker rm 容器id
+
+https://hub.docker.com/   账号yxx26 ，密码 y770411081
