@@ -8,5 +8,7 @@ show status  “slow query”
 
 四，集群id  1，uuid 2，步长 3，redis 4，雪花算法
 
+五，水平分片  房屋表id用redis生成，分片规则用区域字段区分
+
 微服务：数据库垂直拆分 分布式事务
 shading jdbc 客户端 ，mycat服务端
