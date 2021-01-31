@@ -1,10 +1,12 @@
 show status  “slow query”
 
-主从复制 -》mysql的bilog
-读写分离 -》mycat 路由转发 虚拟数据库
-动态数据源：基于mycat的读写权限用户（07.第七节-SpringBoot整合读写分离__OrdinaryVideo）
-集群id uuid 步长 redis 雪花算法
+一，主从复制 -》mysql的bilog
+
+二，读写分离（仅仅mysql服务端） -》mycat 路由转发 虚拟数据库
+
+三，动态数据源（Java客户端）：基于mycat的读写权限用户（07.第七节-SpringBoot整合读写分离__OrdinaryVideo）
+
+四，集群id  1，uuid 2，步长 3，redis 4，雪花算法
+
 微服务：数据库垂直拆分 分布式事务
 shading jdbc 客户端 ，mycat服务端
-
-一般单裤分表
