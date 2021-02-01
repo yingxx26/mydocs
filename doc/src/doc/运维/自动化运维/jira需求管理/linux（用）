@@ -1,0 +1,10 @@
+Æô¶¯ cd  /opt/atlassian/jira/bin
+./start-jira.sh -fg
+Í£Ö¹ ./stop-jira.sh
+http://192.168.181.140:8097
+
+
+yingxx
+y770411081
+
+https://translations.atlassian.com/dashboard/download?lang=zh_CN#/JIRA
