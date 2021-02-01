@@ -1,2 +1,53 @@
-service docker restart
-docker run --name artifactory-oss-6.18.1   -p 8087:8081  docker.bintray.io/jfrog/artifactory-oss:6.18.1
+启动docker：service docker restart
+
+拉取镜像：docker pull docker.bintray.io/jfrog/artifactory-oss:latest
+
+创建并启动容器：
+    docker run \
+    --name artifactory  \
+    -d \
+    -p 8181:8081 -p 8182:8082 \
+    docker.bintray.io/jfrog/artifactory-oss:latest
+
+
+访问：http://192.168.181.140:8182
+admin
+Yy770411081
+
+
+
+2，创建libs-release-local
+创建jcenter  https://maven.aliyun.com/repositories/jcenter
+创建libs-release
+3，下载settings.xml到C:\Users\Dell\.m2 和 /home/yingxx/.m2
+复制
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>bab52be6cade-releases</name>
+        <url>http://192.168.181.140:8182/artifactory/libs-release</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>bab52be6cade-snapshots</name>
+        <url>http://192.168.181.140:8182/artifactory/libs-release</url>
+    </snapshotRepository>
+</distributionManagement>
+到项目pom文件
+
+二，配置
+1，创建master密码：
+mvn --encrypt-master-password Yy770411081
+
+2，新增settings-security.xml文件到C:\Users\Dell\.m2和/home/yingxx/.m2 :
+　　settings-security.xml文件内容如下，其中<master>的值为上一步得到的值
+如下
+<settingsSecurity>
+  <master>{8o/+aK9OAh0HFkAZyDdzdougIb9r2JPjsWqYLABL5Nw=}</master>
+</settingsSecurity>
+
+3，创建server密码：
+mvn --encrypt-password Yy770411081
+{PF+2DWnnYJ8HtCi8jfSRvErd0EYQUcm42KY685+duJ0=}
+
+密码放到C:\Users\Dell\.m2和/home/yingxx/.m2 的setting.pom文件中

@@ -1,5 +1,7 @@
 docker查看日志 ：docker logs   id
 
+docker查看docker daemon日志 journalctl -fu docker.service
+
 docker启动compose  ：docker-compose up -d
 
 启动docker  ： service docker restart
