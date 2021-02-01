@@ -6,6 +6,8 @@ docker启动compose  ：docker-compose up -d
 
 启动docker  ： service docker restart
 
+启动某一容器：docker start bab52be6cade
+
 查看所有镜像：docker images
 
 查看所有容器： docker ps -a
