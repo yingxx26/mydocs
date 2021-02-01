@@ -16,4 +16,4 @@ telnet localhost 23
 5 查看端口占用
 netstat -tunpl |grep 8098   得到id->2456
 ps -ef|grep 2456
-ill -9 2456
+kill -9 2456
