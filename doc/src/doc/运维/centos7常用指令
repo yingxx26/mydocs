@@ -17,3 +17,8 @@ telnet localhost 23
 netstat -tunpl |grep 8098   得到id->2456
 ps -ef|grep 2456
 kill -9 2456
+
+6，查找文件
+find /etc -name ansible
+7，创建软连接
+ln -s /usr/local/python27/bin/ansible /usr/bin/ansible
