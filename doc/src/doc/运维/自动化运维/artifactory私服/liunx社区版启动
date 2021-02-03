@@ -1,0 +1,14 @@
+启动docker：service docker restart
+启动artifactory：docker start  cb9103ddac8d
+
+第一次创建并启动容器：
+  docker run     --name artifactory-jcr   -d     -p 8281:8081 -p 8282:8082     --restart=always     docker.bintray.io/jfrog/artifactory-jcr:latest
+
+
+访问：http://192.168.181.140:8282
+账号：admin
+密码：Yy770411081
+
+
+登陆 docker login art.local:8281 -uadmin -pYy770411081
+

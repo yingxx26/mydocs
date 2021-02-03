@@ -1,5 +1,5 @@
 启动docker：service docker restart
-启动jira： docker start bab52be6cade
+启动artifactory： docker start bab52be6cade
 拉取镜像：docker pull docker.bintray.io/jfrog/artifactory-oss:latest
 
 第一次创建并启动容器：
