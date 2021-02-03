@@ -3,4 +3,8 @@ http://192.168.181.140:8099
 密码：123456
 
 
-若java报错：ln -s /usr/local/src/jdk1.8/bin/java /usr/bin
+部署jar包目录 : /var/lib/jenkins/workspace/testAnsiblePipeline/discovery-service
+
+问题：
+1，若java报错：ln -s /usr/local/src/jdk1.8/bin/java /usr/bin
+2，mvn指令无效： 添加全局变量
