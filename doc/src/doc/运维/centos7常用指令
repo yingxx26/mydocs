@@ -25,3 +25,6 @@ ln -s /usr/local/python27/bin/ansible /usr/bin/ansible
 
 7修改hosts
 vi /etc/hosts
+
+8,普通用户使用root执行命令
+sudo -u root ansible-playbook notebook-all-playbook.yml

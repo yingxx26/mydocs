@@ -7,6 +7,7 @@
     --name artifactory  \
     -d \
     -p 8181:8081 -p 8182:8082 \
+    --restart=always \
     docker.bintray.io/jfrog/artifactory-oss:latest
 
 

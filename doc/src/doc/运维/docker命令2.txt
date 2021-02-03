@@ -18,4 +18,11 @@ docker启动compose  ：docker-compose up -d
 
 删除docker中的容器: docker rm 容器id
 
+
+开启自动启动 ：systemctl enable docker.service
+
+容器自动启动：--restart=always
+
+
 https://hub.docker.com/   账号yxx26 ，密码 y770411081
+
