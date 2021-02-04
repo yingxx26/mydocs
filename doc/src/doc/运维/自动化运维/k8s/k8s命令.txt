@@ -23,5 +23,5 @@
 
 minikube：
     启动： minikube start --driver=none --memory=8192 --cpus=4 --kubernetes-version=v1.17.1 --image-repository=registry.aliyuncs.com/google_containers
-    停止：minikube stop
-    删除：minikube delete
+    停止： minikube stop
+    删除： minikube delete
