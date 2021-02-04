@@ -1,10 +1,10 @@
 命名空间：
-   获取命名空间 : kubectl get namespaces
-   创建命名空间 : kubectl create namespace dev
-   删除命名空间 : kubectl delete namespace dev
+   获取命名空间 :          kubectl get namespaces
+   创建命名空间 :          kubectl create namespace dev
+   删除命名空间 :          kubectl delete namespace dev
 
    命名空间中创建pod :     kubectl run nginx --image=nginx --port=80 -n dev
-   命名空间中查找所有:      kubectl get all -n dev
+   命名空间中查找所有:     kubectl get all -n dev
    命名空间中查找service： kubectl get svc -n dev
    命名空间中查找pod:      kubectl get pod -n dev
    命名空间中删除pod:      kubectl delete pod nginx -n dev

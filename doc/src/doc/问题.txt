@@ -43,7 +43,13 @@ leetcode
 设计模式
 领域模型
 
-
+对外接口： 慕课网-JoJo-Spring cloud微服务安全实战-299元
+退款：Spring Boot企业微信点餐系统
+秒杀：01.大型高并发高可用分布式架构电商实战SpringBoot+SpringCloud++Dubbo+RabbitMQ+Redis+Elasticsearch+DockerK8S++VueJS分布式系统架构视频教程
+     02大型微服务分布式电商项目架构实战SpringBoot+SpringCloud+Nginx+ELK+Kafka+Mysql+Jenkins+Docker+K8S+RabbitMQ+SSO+Zookeeper+Redis视频教程
+     03.分布式事务+电商项目实战青橙商城（vue+ssm+du
+     17.从无到有构建亿级微服务秒杀系统（真实工业界案例）SpringBoot2.0+SpringCloud+Mybatis+Quartz+Nginx+Redis+Ehchche+CAS+RabbitMQ+Mysql+Macat视频教程
+     秒杀系统企业级实战应用（真实工业界案例）
 二：架构
 1：业务架构
 规格表设计
