@@ -1,15 +1,27 @@
-kubectl create  -f   xx.yaml  创建资源、启动
-kubectl apply   -f   xx.yaml  变更资源
-kubectl delete  -f   xx.yaml  变更资源
+命名空间：
+   获取命名空间 : kubectl get namespaces
+   创建命名空间 : kubectl create namespace dev
+   删除命名空间 : kubectl delete namespace dev
 
-kubectl get all   查看全部
-kubectl get svc   查看service
-kubectl get po    查看pod
-kubectl get po -dev   查看pod 限定namespace
-kubectl exec -it  pod-id   /bin/sh  登录 pod
+   命名空间中创建pod :     kubectl run nginx --image=nginx --port=80 -n dev
+   命名空间中查找所有:      kubectl get all -n dev
+   命名空间中查找service： kubectl get svc -n dev
+   命名空间中查找pod:      kubectl get pod -n dev
+   命名空间中删除pod:      kubectl delete pod nginx -n dev
 
-kubectl descirbe pod  pod-id  查看
+   创建资源、启动：         kubectl create  -f   xx.yaml
+   变更资源：              kubectl apply   -f   xx.yaml
+   删除资源 ：             kubectl delete  -f   xx.yaml
 
-kubectl logs pod/pod-id 查看日志
+   登录 pod  ：            kubectl exec -it nginx /bin/sh   -n dev
+   查看pod详情：           kubectl descirbe pod  pod-id
+   查看pod日志：           kubectl logs pod/pod-id
+   登录pod后，打印环境变量：printenv
 
-printenv    登录 pod后，打印环境变量
+
+
+
+minikube：
+    启动： minikube start --driver=none --memory=8192 --cpus=4 --kubernetes-version=v1.17.1 --image-repository=registry.aliyuncs.com/google_containers
+    停止：minikube stop
+    删除：minikube delete
