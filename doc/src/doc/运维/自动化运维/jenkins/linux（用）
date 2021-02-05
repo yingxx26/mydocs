@@ -8,3 +8,5 @@ http://192.168.181.140:8099
 问题：
 1，若java报错：ln -s /usr/local/src/jdk1.8/bin/java /usr/bin
 2，mvn指令无效： 添加全局变量
+3，权限不够：这是因为用户没有对该文件的执行权限，把用./的方式换成sh就行了。
+            比如之前是./start.sh 把这个命令换成sh start.sh就可以了，亲测有效
