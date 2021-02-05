@@ -1,0 +1,70 @@
+一，deployment.yaml 配置模版如下：
+
+
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}  #deployment应用名
+  labels:
+    app: {{ .Release.Name }}          #deployment应用标签定义
+spec:
+  replicas: {{ .Values.replicas}}           #pod副本数
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}          #pod选择器标签
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}          #pod标签定义
+    spec:
+      containers:
+        - name: {{ .Release.Name }}           #容器名
+          image: {{ .Values.image }}:{{ .Values.imageTag }}    #镜像地址
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+
+
+二，service.yaml定义如下：
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-svc #服务名
+spec:
+  selector: #pod选择器定义
+    app: {{ .Release.Name }}
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
+
+三，ingress.yaml定义如下：
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-ingress #ingress应用名
+spec:
+  rules:
+    - host: {{ .Values.host }}  #域名
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ .Release.Name }}-svc #服务名
+              servicePort: 80
+
+
+四，values.yaml chart包参数定义：
+#域名
+host: www.XXX.com
+
+#镜像参数
+image: XXXXXXXXXXXXXXXXXX
+imageTag: 1.7.9
+
+#pod 副本数
+replicas:1

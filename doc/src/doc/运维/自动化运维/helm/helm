@@ -1,0 +1,16 @@
+一，安装
+解压： tar -zxvf helm-v3.3.0-linux-amd64.tar.gz
+移动：mv linux-amd64/helm /usr/local/bin/helm
+
+配置远程：helm repo add helm http://192.168.181.140:8282/artifactory/helm --username admin --password AP6S1asTjGkN5J6ekMNcJMXhyJg
+
+
+启动：cd /usr/local/src/test/k8s-deploy/k8s-deploy/charts/notebook
+
+     helm install -f values.yaml notebook ./
+
+查看：helm ls
+删除：helm delete notebook
+
+
+更新charts列表： helm repo update

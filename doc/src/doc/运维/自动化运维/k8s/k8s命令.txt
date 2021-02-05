@@ -14,7 +14,7 @@
    删除资源 ：             kubectl delete  -f   xx.yaml
 
    登录 pod  ：            kubectl exec -it nginx /bin/sh   -n dev
-   查看pod详情：           kubectl descirbe pod  pod-id
+   查看pod详情：          describe  pod-id
    查看pod日志：           kubectl logs pod/pod-id
    登录pod后，打印环境变量：printenv
 
