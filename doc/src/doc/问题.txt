@@ -36,7 +36,7 @@
 数据库模型
 
 
-1，对外接口： 慕课网-JoJo-Spring cloud微服务安全实战-299元
+1，网关
 
 2：规格表设计
 mall
@@ -61,7 +61,7 @@ redis key设计
 优惠券表设计
 imooc-coupon
 
-
+快递接口
 
 
 
