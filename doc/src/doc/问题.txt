@@ -30,19 +30,24 @@
 --每特 mycat
 
 --持续交付
+--2：规格表设计   模板-》规格/参数-》sku
+
 
 一 ：业务
 问题和bug
 数据库模型
 
 
-1，网关
 
-2：规格表设计
+1，
 mall
 订单流转（状态模式）
 优惠券（装饰器模式）
 支付方式（策略模式）
+2：
+redis key设计
+优惠券表设计
+imooc-coupon
 
 
 4，龙国支付roncoo-pay   看到对账
@@ -56,13 +61,8 @@ mall
      17.从无到有构建亿级微服务秒杀系统（真实工业界案例）SpringBoot2.0+SpringCloud+Mybatis+Quartz+Nginx+Redis+Ehchche+CAS+RabbitMQ+Mysql+Macat视频教程
      秒杀系统企业级实战应用（真实工业界案例）
 
-7：
-redis key设计
-优惠券表设计
-imooc-coupon
 
-快递接口
-
+8，快递接口
 
 
 
@@ -72,3 +72,9 @@ leetcode
 文档 画图
 设计模式
 领域模型
+
+
+
+一，电商
+二，虚拟私有云， 统计，私有云本地计费
+三，网签（工作流），物业资金，透明售房网（展示），对外接口
