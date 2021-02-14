@@ -56,13 +56,13 @@ imooc-coupon
 5，物业资金:  需求分析里的分摊com.hzfc.soar.wyjj.fzgn.zjyft.action.ZjyftAction#ftfy  和结息
 
 6，秒杀：
-     本质令牌桶
+     redisson
+     leftpush， pop
      --01.大型高并发高可用分布式架构电商实战SpringBoot+SpringCloud++Dubbo+RabbitMQ+Redis+Elasticsearch+DockerK8S++VueJS分布式系统架构视频教程
      --02大型微服务分布式电商项目架构实战SpringBoot+SpringCloud+Nginx+ELK+Kafka+Mysql+Jenkins+Docker+K8S+RabbitMQ+SSO+Zookeeper+Redis视频教程
      03.分布式事务+电商项目实战青橙商城（vue+ssm+du
-     11.大型分布式电商系统架构商家版购物商城Springboot+Dubbox+SpringSecurity+AngularJS+Freemarker+Docker+CAS单点登录+微信支付视频课程 hidefocus=true href=javascript; data-tag=0 data-dir=111.大型分布式电商系统架构商家版购物商城Springboot+Dubbox+SpringSecurity+AngularJS+Freemarker+Docker+
-     17.从无到有构建亿级微服务秒杀系统（真实工业界案例）SpringBoot2.0+SpringCloud+Mybatis+Quartz+Nginx+Redis+Ehchche+CAS+RabbitMQ+Mysql+Macat视频教程
-     秒杀系统企业级实战应用（真实工业界案例）
+     --17.从无到有构建亿级微服务秒杀系统（真实工业界案例）SpringBoot2.0+SpringCloud+Mybatis+Quartz+Nginx+Redis+Ehchche+CAS+RabbitMQ+Mysql+Macat视频教程
+     --秒杀系统企业级实战应用（真实工业界案例）
 
 7, 10十字方 点赞
 
@@ -79,9 +79,9 @@ leetcode
 
 
 
-一，电商
+一，电商商品  分类，支付，秒杀，优惠券，对账
 二，虚拟私有云， 统计，私有云本地计费
-三，网签（工作流），物业资金，透明售房网（展示），对外接口
+三，网签（工作流），物业资金。透明售房网（展示），点赞，对外接口
 
 
 
