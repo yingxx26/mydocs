@@ -48,7 +48,7 @@
 流程图
 
 rabbitmq注解
-redis的双写，事务
+
 
 1，
 mall
