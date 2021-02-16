@@ -32,6 +32,15 @@
 --持续交付
 --2：规格表设计   模板-》规格/参数-》sku   mall和01.大型高并发高可用分布式架构电商实战
 
+6，秒杀：
+     redisson
+     leftpush， pop
+     --01.大型高并发高可用分布式架构电商实战SpringBoot+SpringCloud++Dubbo+RabbitMQ+Redis+Elasticsearch+DockerK8S++VueJS分布式系统架构视频教程
+     --02大型微服务分布式电商项目架构实战SpringBoot+SpringCloud+Nginx+ELK+Kafka+Mysql+Jenkins+Docker+K8S+RabbitMQ+SSO+Zookeeper+Redis视频教程
+     --03.分布式事务+电商项目实战青橙商城（vue+ssm+du
+     --17.从无到有构建亿级微服务秒杀系统（真实工业界案例）SpringBoot2.0+SpringCloud+Mybatis+Quartz+Nginx+Redis+Ehchche+CAS+RabbitMQ+Mysql+Macat视频教程
+     --秒杀系统企业级实战应用（真实工业界案例）
+
 
 一 ：业务
 问题和bug
@@ -39,6 +48,7 @@
 流程图
 
 rabbitmq注解
+redis的双写，事务
 
 1，
 mall
@@ -55,20 +65,11 @@ imooc-coupon
 
 5，物业资金:  需求分析里的分摊com.hzfc.soar.wyjj.fzgn.zjyft.action.ZjyftAction#ftfy  和结息
 
-6，秒杀：
-     redisson
-     leftpush， pop
-     --01.大型高并发高可用分布式架构电商实战SpringBoot+SpringCloud++Dubbo+RabbitMQ+Redis+Elasticsearch+DockerK8S++VueJS分布式系统架构视频教程
-     --02大型微服务分布式电商项目架构实战SpringBoot+SpringCloud+Nginx+ELK+Kafka+Mysql+Jenkins+Docker+K8S+RabbitMQ+SSO+Zookeeper+Redis视频教程
-     03.分布式事务+电商项目实战青橙商城（vue+ssm+du
-     --17.从无到有构建亿级微服务秒杀系统（真实工业界案例）SpringBoot2.0+SpringCloud+Mybatis+Quartz+Nginx+Redis+Ehchche+CAS+RabbitMQ+Mysql+Macat视频教程
-     --秒杀系统企业级实战应用（真实工业界案例）
-
 7, 10十字方 点赞
 
+
+
 8，快递接口
-
-
 
 sentinel 源码
 leetcode
@@ -79,9 +80,9 @@ leetcode
 
 
 
-一，电商商品  分类，支付，秒杀，优惠券，对账
+一，传统行业电商商品  分类，支付，秒杀，优惠券，对账
 二，虚拟私有云， 统计，私有云本地计费
-三，网签（工作流），物业资金。透明售房网（展示），点赞，对外接口
+三，网签（工作流），物业资金，安置房。透明售房网（展示），点赞，对外接口
 
 
 

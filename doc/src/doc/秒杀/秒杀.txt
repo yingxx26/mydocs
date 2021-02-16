@@ -1,0 +1,8 @@
+运营人员
+查出秒杀商品放Redis，按照时间+商品id做key
+
+客户
+排队redis列表 leftpush
+查出列表 rightpop ，生成订单缓存（redis）——》死信队列
+
+库存超卖：redis队列  SeckillGoodsCountList_110    [110,110,110,110,110]

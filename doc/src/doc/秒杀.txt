@@ -1,6 +1,0 @@
-查出秒杀商品放Redis，按照时间+商品id做key
-客户
-排队redis列表 leftpush
-查出列表 rightpop ，生成订单缓存（redis）
-
-库存超卖 商品id为key   redis列表 leftpushall
