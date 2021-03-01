@@ -51,6 +51,8 @@
 
 rabbitmq注解
 
+mysql innodb的死锁问题
+
 
 1，
 mall
@@ -65,9 +67,16 @@ imooc-coupon
 
 4，龙国支付roncoo-pay   看到对账
 
-5，物业资金:  需求分析里的分摊com.hzfc.soar.wyjj.fzgn.zjyft.action.ZjyftAction#ftfy  和结息
+5，物业资金:
+需求分析里的分摊com.hzfc.soar.wyjj.fzgn.zjyft.action.ZjyftAction#ftfy 预分摊 和结息
+com.hzfc.soar.wyjj.fzgn.zjcft.action  ftfy 重分摊
+hzZhToWyz（汇总账户，变动信息到业务幢，删除单元、户级的账户和变动信息）
 
+看到WxjsyRuku  维修金使用入库
 
+维修金缴交计算jisuanJjData
+
+保修金转维修金
 
 
 sentinel 源码
@@ -80,8 +89,8 @@ leetcode
 
 
 一，传统行业电商商品  分类，支付，秒杀，优惠券，对账
-二，虚拟私有云， 统计，私有云本地计费
-三，网签（工作流），物业资金，安置房。透明售房网（展示）地图找房，点赞，社交登录，对外接口
+二，虚拟私有云， 统计 echart，对外接口
+三，网签（工作流），物业资金，安置房。透明售房网（展示）地图找房，点赞，社交登录
 
 
 
