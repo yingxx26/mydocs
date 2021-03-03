@@ -45,9 +45,7 @@
 --8，积分
 
 一 ：业务
-问题和bug
-数据库模型
-流程图
+
 
 rabbitmq注解
 
@@ -56,7 +54,7 @@ mysql innodb的死锁问题
 
 1，
 mall
-订单流转（状态模式） 退款 :申请、待处理、退货中、已完成、已拒绝
+订单流转（状态模式）
 优惠券（装饰器模式）
 支付方式（策略模式）
 
@@ -68,18 +66,24 @@ imooc-coupon
 4，龙国支付roncoo-pay   看到对账
 
 5，物业资金:
-需求分析里的分摊com.hzfc.soar.wyjj.fzgn.zjyft.action.ZjyftAction#ftfy 预分摊 和结息
-com.hzfc.soar.wyjj.fzgn.zjcft.action  ftfy 重分摊
-hzZhToWyz（汇总账户，变动信息到业务幢，删除单元、户级的账户和变动信息）
 
-看到WxjsyRuku  维修金使用入库
+维修金缴交计算 WxjjjAction  方法jisuanJjData  缴交标准*面积
 
-维修金缴交计算jisuanJjData
+维修金使用入库 WxjsyRuku 方法ftWxj计算应分摊总费用： 根据预决算（首拨，余拨）计算 ；
+                  ftfy分摊：面积/总面积*应分摊总费用
+                       changeFtje：检查sum差一分
+                            tiaoZhengSjKftJe：处理分账户账户资金不足：有多少扣多少（比交 分摊金额 和 利息、本金、限制金额）
+                                 如果有审计费用，先扣减审计费用
+续筹
 
-保修金转维修金
+退换
+
+结息
 
 
-
+问题和bug
+数据库模型
+流程图
 
 
 一，传统行业电商商品  分类，支付，秒杀，优惠券，对账
@@ -94,3 +98,8 @@ leetcode
 文档 画图
 设计模式
 领域模型
+
+需求分析里的分摊com.hzfc.soar.wyjj.fzgn.zjyft.action.ZjyftAction#ftfy 预分摊 和结息
+com.hzfc.soar.wyjj.fzgn.zjcft.action  ftfy 重分摊
+hzZhToWyz（汇总账户，变动信息到业务幢，删除单元、户级的账户和变动信息）
+保修金转维修金
