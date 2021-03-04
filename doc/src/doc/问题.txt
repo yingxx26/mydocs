@@ -77,8 +77,17 @@ imooc-coupon
 续筹
 
 退换
+  根据所选账户或者房屋 计算结息利息
+    //结息账户资金变动情况grjxJxzhzjbd->grjxHqDq定期和活期->grjxFormHqDq账户结息明细表
+    saveWxjthBizinfo
+    资金入账//生成账户变动信息、操作账户资金
+    this.ruku_zhxx(ywslid, tprWxjYjthxm,kxqr);
+    款项确认//生成银行资金流水  操作银行账户资金
+    tprYhzjlsService.saveZjsyYhzjls(kxqr);
 
 结息
+
+银行资金流水
 
 
 问题和bug
