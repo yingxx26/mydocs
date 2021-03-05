@@ -1,0 +1,8 @@
+新增商品时候，选择产品属性分类表pms_product_attribute_category，
+             通过分类查询出商品属性参数表pms_product_attribute，供选择。
+             选择自己的 属性参数 ，添加到pms_product_attribute_value表中
+
+新增分类时候，选择该分类的规格属性 pms_product_category_attribute_relation
+
+新增优惠券的时候 关联商品分类 sms_coupon_product_category_relation
+               关联商品 sms_coupon_product_relation

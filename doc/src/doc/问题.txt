@@ -65,29 +65,6 @@ imooc-coupon
 
 4，龙国支付roncoo-pay   看到对账
 
-5，物业资金:
-
-维修金缴交计算 WxjjjAction  方法jisuanJjData  缴交标准*面积
-
-维修金使用入库 WxjsyRuku 方法ftWxj计算应分摊总费用： 根据预决算（首拨，余拨）计算 ；
-                  ftfy分摊：面积/总面积*应分摊总费用
-                       changeFtje：检查sum差一分
-                            tiaoZhengSjKftJe：处理分账户账户资金不足：有多少扣多少（比交 分摊金额 和 利息、本金、限制金额）
-                                 如果有审计费用，先扣减审计费用
-续筹
-
-退换
-  根据所选账户或者房屋 计算结息利息
-    //结息账户资金变动情况grjxJxzhzjbd->grjxHqDq定期和活期->grjxFormHqDq账户结息明细表
-    saveWxjthBizinfo
-    资金入账//生成账户变动信息、操作账户资金
-    this.ruku_zhxx(ywslid, tprWxjYjthxm,kxqr);
-    款项确认//生成银行资金流水  操作银行账户资金
-    tprYhzjlsService.saveZjsyYhzjls(kxqr);
-
-结息
-
-银行资金流水
 
 
 问题和bug
@@ -97,7 +74,7 @@ imooc-coupon
 
 一，传统行业电商商品  分类，支付，秒杀，优惠券，对账
 二，虚拟私有云， 统计 echart，对外接口
-三，网签（工作流），物业资金，安置房。透明售房网（展示）地图找房，点赞，社交登录
+三，网签（工作流），物业资金（首拨，余拨，分摊结息），安置房。透明售房网（展示）地图找房，点赞，社交登录
 
 
 
@@ -108,7 +85,4 @@ leetcode
 设计模式
 领域模型
 
-需求分析里的分摊com.hzfc.soar.wyjj.fzgn.zjyft.action.ZjyftAction#ftfy 预分摊 和结息
-com.hzfc.soar.wyjj.fzgn.zjcft.action  ftfy 重分摊
-hzZhToWyz（汇总账户，变动信息到业务幢，删除单元、户级的账户和变动信息）
-保修金转维修金
+
