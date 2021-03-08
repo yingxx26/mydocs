@@ -40,7 +40,7 @@
      --03.分布式事务+电商项目实战青橙商城（vue+ssm+du
      --17.从无到有构建亿级微服务秒杀系统（真实工业界案例）SpringBoot2.0+SpringCloud+Mybatis+Quartz+Nginx+Redis+Ehchche+CAS+RabbitMQ+Mysql+Macat视频教程
      --秒杀系统企业级实战应用（真实工业界案例）
---7, 10十字方 点赞
+
 
 --8，积分
 
@@ -51,6 +51,10 @@ rabbitmq注解
 
 mysql innodb的死锁问题
 
+微信
+
+angular8脏值检测
+7, 10十字方 点赞
 
 1，
 mall
@@ -60,14 +64,16 @@ mall
 
 2：
 redis key设计
+
 优惠券表设计
+
 imooc-coupon
 
 4，龙国支付roncoo-pay   看到对账
 
 
 
-问题和bug
+问题和bug： 优惠券幂等性  事务里面加锁
 数据库模型
 流程图
 
