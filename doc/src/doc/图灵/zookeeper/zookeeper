@@ -1,0 +1,7 @@
+选举是核心startLeaderElection()
+
+第一次：先myid 后zid
+
+重新选举：leader和follwer  ping心跳，如果断开  finally中改成looking继续选举
+
+zab ： leader收到半数以上ack 再提交

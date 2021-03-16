@@ -1,0 +1,4 @@
+自动配置 ： spi机制： 从jar包下spring.factories取出，如果代码配置了相应的类，则加入到spring容器中
+嵌入tomcat： 先自动装配tomcat自定义信息， run的时候创建tomcat
+
+循环依赖  原始对象放入缓存
