@@ -47,3 +47,4 @@ pooledbytebuffer  threadlocal缓存
 
 8，粘包，拆包
 以特殊字符串结尾。 服务器加个hangdeler
+或者发送 字节长度

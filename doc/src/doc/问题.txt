@@ -55,7 +55,7 @@ dubbo springcloud
 
 redis秒杀
 
-CountDownLatch&Semaphore  lock    源码图
+链表学习： blockingqueue  的put方法
 
 1，
 mall
@@ -80,7 +80,7 @@ imooc-coupon
 
 
 一，传统行业电商商品  分类，支付，秒杀，优惠券,对账
-二，虚拟私有云，  activiti elasticsearch vue echart，  数据展示echart ，spark款表->es，用户增量， 年龄段， 消费水平，流量包过期，投诉
+二，大数据  activiti elasticsearch vue echart，  数据展示echart ，spark款表->es，用户增量， 年龄段， 消费水平，流量包过期，投诉
 三，网签（工作流），物业资金（首拨，余拨，分摊结息），安置房。透明售房网（展示）地图找房， 社交登录
 
 

@@ -1,0 +1,15 @@
+线程池：private final HashSet<Worker> workers = new HashSet<>();
+
+单个线程：
+private final class Worker extends AbstractQueuedSynchronizer  implements Runnable
+    {
+        final Thread thread;
+        Runnable firstTask;
+        volatile long completedTasks;//该线程跑了几次任务
+        。。。。。。
+         Worker(Runnable firstTask) {
+            setState(-1); // 阻止中断
+            this.firstTask = firstTask;
+            this.thread = getThreadFactory().newThread(this);
+         }
+    }
