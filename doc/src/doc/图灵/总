@@ -4,5 +4,5 @@
 图灵4：tomcat源码，mysql优化，zookeeper源码，netty，dubbo
 
 zookeeper：cp   选举
-nacos：ap 副本
-euraker： ap  缓存
+nacos：ap  注册后写copyonwrite副本，一并同步 实时性高
+euraker： ap  注册后30s同步-》缓存map  实时性差
