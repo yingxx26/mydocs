@@ -51,7 +51,7 @@ rabbitmq注解
 
 mysql innodb的死锁问题
 
-dubbo springcloud
+Seata  springcloud
 
 redis秒杀
 
