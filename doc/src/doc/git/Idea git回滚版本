@@ -1,0 +1,5 @@
+第一步：点击项目右键git->Show Histroy ->选择需要回滚的版本，右键Copy Revision Number
+第二步：
+a.右击项目依次选中：git->Repository->Reset HEAD
+b. 选中Reset Type:Mixed, To Commit:08d537b4fdc74f880f572e948df9a1e87e2ea41f；然后点击Reset按钮
+
