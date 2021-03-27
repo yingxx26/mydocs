@@ -10,3 +10,4 @@ BindingResult 记录@vialid验证的结果
 
 ImageIo.write  流写到前端（图片）
 IOUtil.write   写到流中
+下载文件IOUtils.copy(input,output)

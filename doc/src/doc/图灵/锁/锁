@@ -1,0 +1,8 @@
+cas   缓存lock前缀锁定,阻止同时修改缓存对应的内存区域   （缺点） aba，循环时间长,只能保证一个变量
+
+violate 和cas对应，缓存一致性协议  ，别的缓存设置无效
+
+Synchronized  monitor监视器锁
+
+synchized 读读互斥
+

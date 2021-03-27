@@ -1,0 +1,21 @@
+cms老年代
+
+
+堆 实时图像 visual vm
+堆 分类 jconsole
+堆 对象  visual vm  dump
+Gc实时 jstat  -gcutil 167440 1000 100
+Gc实时图像 visual vm
+Gc日志
+
+
+
+
+
+堆栈结构  内存模型 程序计数器，堆（对象，数组），栈（临时变量，引用，操作数），方法区（类信息，常量，静态变量），双亲委派机制（启动，扩展，应用），
+         最大内存和最小内存一样，调高内存（默认是4分之1）   调高新生代（默认1:2）
+
+ 新生代复制算法（存活率低复制小，效率高，浪费内存），老年代标记整理算法（效率低），-XX:+HeapDumpOnOutOfmenoryError -XX:HeapDumpPath= .dump  -XX:PrintGCDEATILs -xms512 -xmx512m  尽量减少fullgc
+
+ 堆是共享的，栈是不共享的
+
