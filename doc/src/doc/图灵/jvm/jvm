@@ -4,7 +4,7 @@
 new对象 -》分配内存  初始化  设置header  init
 
 
-
+通过qps算 堆内存
 
 
 堆 实时图像 visual vm
