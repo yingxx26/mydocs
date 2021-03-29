@@ -94,3 +94,5 @@ leetcode
 
 
 mq有序  丢失
+
+aqs可重入
