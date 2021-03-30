@@ -1,0 +1,3 @@
+mvcc下，事务里面  后面都是第一次select的值
+
+事务里锁是从第一次 insert，update，delete 开始的
