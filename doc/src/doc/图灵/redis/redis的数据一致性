@@ -50,3 +50,6 @@ Redis缓存和数据库不一致怎么解决
   这样一旦MySQL中产生了新的写入、更新、删除等操作，就可以把binlog相关的消息推送至Redis，Redis再根据binlog中的记录，对Redis进行更新。
 
   其实这种机制，很类似MySQL的主从备份机制，因为MySQL的主备也是通过binlog来实现的数据一致性。
+
+
+第4种方案： redisioon 读写锁
