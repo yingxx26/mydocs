@@ -1,3 +1,5 @@
 cpu内存资源隔离cgroup
 进程空间隔离namespace
 文件系统隔离unionfs，联合挂载文件系统
+
+资源隔离copyonwrite 机制

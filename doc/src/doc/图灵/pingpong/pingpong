@@ -1,0 +1,2 @@
+pingpong全局事务id记录在kibana
+找到exception-》事务id
