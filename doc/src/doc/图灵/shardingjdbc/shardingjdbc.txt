@@ -1,0 +1,9 @@
+stand   支持  range 和precise
+complex 支持  多字段
+hibt 没有分片键  
+
+广播表：字典
+绑定表： 解决分表情况下，多表join笛卡尔积
+
+
+spi机制：数据源类型，分布式事务类型，主键生成
