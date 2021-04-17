@@ -47,8 +47,6 @@
 一 ：业务
 
 
-rabbitmq注解
-
 mysql innodb的死锁问题
 
 Seata  springcloud
@@ -65,10 +63,7 @@ mall
 
 2：
 redis key设计
-
 优惠券表设计
-
-imooc-coupon
 
 4，龙国支付roncoo-pay   看到对账
 
@@ -76,7 +71,6 @@ imooc-coupon
 
 问题和bug：   事务失效
 数据库模型
-流程图
 
 
 一，传统行业电商商品  分类，支付，秒杀，优惠券,对账
@@ -84,13 +78,10 @@ imooc-coupon
 三，网签（工作流），物业资金（首拨，余拨，分摊结息），安置房。透明售房网（展示）地图找房， 社交登录
 
 
-
-sentinel 源码
 leetcode
 
 文档 画图
 设计模式
-领域模型
 
 
 mq有序  丢失
