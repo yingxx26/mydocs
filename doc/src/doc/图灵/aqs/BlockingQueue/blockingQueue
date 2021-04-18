@@ -1,2 +1,5 @@
 1，ReentrantLock: 非公平
 2，condition ： notEmpty ，notFull
+
+clh等待队列满了，生产者加入condition条件队列
+clh等待队列有空了，通知生产者出condition条件队列，进等待队列有
