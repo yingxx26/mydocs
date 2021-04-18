@@ -1,0 +1,11 @@
+   synchronized锁住的是对象，锁是对象头里与monitor(相当于锁lock对象)关联着的指针。线程持有monitor会被锁住。
+ObjectMonitor有两个队列，WaitSet和EntryList(相当于锁的等待队列)，当多个线程同时访问一段同步代码块时，
+首先就会进入EntryList集合获取monitor，当线程获得对象的monitor后，把monitor中owner变量（相当于锁的对应的线程id)设为当前线程,
+计数器count加1(相当于锁对象的state)。
+
+当线程调用wait()释放锁时，线程释放持有的monitor，owner变量为null, count减1，加入到WaitSet集合中等待被唤醒。
+
+   synchronize修饰同步代码块时，java编译的时候会在同步代码块的前后加上monitorenter和monitorexit指令，当线程执行monitorenter时，
+会获取monitor对象，而monitor对象被对象头中的指针所指向，获取到锁的线程后，将monitor对象的锁计数器加1，执行monitorexit时，减1。
+如果获取锁失败，则线程就会阻塞等待另一个线程释放为止。
+

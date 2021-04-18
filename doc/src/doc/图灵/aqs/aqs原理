@@ -11,3 +11,7 @@ aqs独占模式：ReentrantLock
 aqs共享模式：semaphore cyclicbarrier countdownLatch
 
 condition只能在aqs独占模式下使用
+
+
+独占共享 通过链表节点node的属性
+公平非公平 通过判断链表是否有节点
