@@ -1,7 +1,11 @@
 选举是核心startLeaderElection()
 
-第一次：先myid 后zid
+第一次：先文件自己写的myid， 后命令zxid
 
 重新选举：leader和follwer  ping心跳，如果断开  finally中改成looking继续选举
 
-zab ： leader收到半数以上ack 再提交，半数写入才算成功，解决脑裂牺牲可用性
+zab ： leader收到半数以上ack 再提交，半数写入才算成功-》解决脑裂牺牲可用性
+
+
+流程：客户端netty发送链接，
+      服务端netty接收，责任链模式（发送其他节点，存储日志，收取ack，提交）
