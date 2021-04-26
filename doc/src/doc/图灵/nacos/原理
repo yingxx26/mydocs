@@ -1,1 +1,6 @@
-注册中心拉倒本地，轮训调用
+微服务注册到nacos（异步队列），节点同步数据（异步队列）
+从注册中心拉服务到本地，轮训调用
+
+zookeeper：cp   选举
+nacos：ap  注册后写copyonwrite副本，一并同步 实时性高
+euraker： ap  注册后30s同步-》缓存map  实时性差
