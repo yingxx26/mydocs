@@ -3,5 +3,8 @@ mybatis
 2 缓存  装饰器模式
 一级缓存 sqlsession级别
 二级缓存 mapper级别（关联查询有问题）
-3 日志 装饰器    if (log.isDebugEnabled()) {
-4 插件是责任链模式
+3 日志 装饰器    if (log.isDebugEnabled()) {}
+4 插件 责任链模式+代理
+5 解析sql 责任链+装饰器
+6 spring 整合mybatis -》 bean定义后置处理器 里 重写spring的scan，让其可以扫描接口
+ factorybean，getobject方法注入spring容器
