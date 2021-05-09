@@ -1,1 +1,14 @@
-ioc流程-》 扫描注解=》注册到bean定义-》实例化——》初始化（循环依赖）
+ioc流程-》 扫描注解=》注册到bean定义-》实例化——》初始化（aware，循环依赖）
+
+扩展点：自动扫描实现beanFactoryPostProcessor的bean，修改bean定义
+
+aop：  在bean初始化后最后一个beanPostProcesssor
+
+
+为什么用后置处理器：可插拔
+
+
+三级缓存：
+ 一级 存的完整的bean。
+ 二级 存的纯净的bean，没有初始化的。
+ 三级 解决 执行aop的时机（没有aop的话没有作用，直接剪切到二级缓存）
