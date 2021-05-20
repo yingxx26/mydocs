@@ -17,7 +17,6 @@
 
 
 --soar                合同模板  预售证申报  合同签订（线下签字 或 e签宝电子签章）特殊人才
---E签宝                api创建e签宝买方/卖方账户，上传合同，发起签章，,发送短信，法人和买方登陆短信（e签宝oauth登陆页面）签约，签约人盖章后 回调qzhd(二维码) -》盖章审核后 回调shhjqzhd(水印)
 
 --E签宝 发短信之前流程
 /spfhtdzqz/loadReadonlyHtwbDzqz.action?htmbid=1035610&htid=403050&htcode=403050&roleName=shengxiao&moduleName=402882f528b9d3dd0128b9d781ce0003
@@ -74,6 +73,5 @@ leetcode
 mq有序  丢失
 消息挤压
 
-map treemap  skipmap
+map treemap  skipmap   SkipList（解决链表的索引问题）
 
-guava 的限流源码
