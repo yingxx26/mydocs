@@ -2,6 +2,9 @@
 
 维修金缴交计算 WxjjjAction  方法jisuanJjData  缴交标准*面积
 
+
+分摊页面zjyft_index.jsp
+
 维修金使用入库 WxjsyRuku 方法ftWxj计算应分摊总费用： 根据预决算（首拨，余拨）计算 ；
                   ftfy分摊：面积/总面积*应分摊总费用
                        changeFtje：检查sum差一分
@@ -28,7 +31,7 @@
         款项确认//生成银行资金流水  操作银行账户资金
         tprYhzjlsService.saveZjsyYhzjls(kxqr);
 
-结息
+结息 listZjjx.jsp    startWxjjx()
 
 银行资金流水
     YhzjlsManagerServiceImpl.ruku_zsk
