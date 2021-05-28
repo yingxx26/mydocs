@@ -1,6 +1,5 @@
 播放账号：应学欣 密码：364509
 shell ，机架感知（重写类，core-site.xml，打jar包到lib）
- myact解决的是数据库性能，tcc解决的是应用层分布式事务
 
 复杂业务或者实时sparkstream  用rdd
 离线统计用hive
