@@ -1,0 +1,840 @@
+<div id="article_content" class="article_content clearfix">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-b5506197d8.css">
+                <div id="content_views" class="markdown_views prism-atom-one-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                    <p></p>
+<div class="toc">
+ <h3><a name="t0"></a><a name="t0"></a>ES6</h3>
+ <ul><li><a href="#Day01_1" target="_self">Day01</a></li><li><ul><li><a href="#1_2" target="_self">1、面向对象编程介绍</a></li><li><ul><li><a href="#11__3" target="_self">1.1 两大编程思想</a></li><li><a href="#12__POP_7" target="_self">1.2 面向过程编程 POP</a></li><li><a href="#13__OOP_12" target="_self">1.3 面向对象编程 OOP</a></li><li><a href="#14__22" target="_self">1.4 面向过程和面向对象的对比</a></li></ul>
+   </li><li><a href="#2ES6_28" target="_self">2、ES6中的类和对象</a></li><li><ul><li><a href="#21__37" target="_self">2.1 对象</a></li><li><a href="#22__class_44" target="_self">2.2 类 class</a></li><li><a href="#23__50" target="_self">2.3 创建类</a></li><li><a href="#24__67" target="_self">2.4 创建实例</a></li><li><a href="#25__74" target="_self">2.5 类添加方法</a></li></ul>
+   </li><li><a href="#3_93" target="_self">3、类的继承</a></li><li><ul><li><a href="#31__extends_94" target="_self">3.1 继承 extends</a></li><li><a href="#32_super_106" target="_self">3.2 super关键字</a></li><li><a href="#33_super_117" target="_self">3.3 super调用父类普通函数以及继承中属性方法查找原则(就近原则）</a></li><li><a href="#34_superthis_121" target="_self">3.4 super必须在子类this之前调用</a></li><li><a href="#35__122" target="_self">3.5 三个注意点</a></li></ul>
+   </li><li><a href="#4_128" target="_self">4、面向对象案例</a></li></ul>
+  </li><li><a href="#Day02_169" target="_self">Day02</a></li><li><ul><li><a href="#1_170" target="_self">1、构造函数和原型</a></li><li><ul><li><a href="#11__173" target="_self">1.1 概述</a></li><li><a href="#12__186" target="_self">1.2 构造函数</a></li><li><ul><li><a href="#1JS_189" target="_self">**（1）在JS中，使用构造函数时要注意以下两点：**</a></li><li><a href="#2new__193" target="_self">**（2）new 在执行时会做四件事情：**</a></li><li><a href="#3_199" target="_self">（3）实例成员和静态成员</a></li></ul>
+    </li><li><a href="#13__225" target="_self">1.3 构造函数的问题</a></li><li><a href="#14_prototype_230" target="_self">1.4 构造函数原型prototype</a></li><li><a href="#15___proto___240" target="_self">1.5 对象原型__proto__</a></li><li><a href="#16__constructor__251" target="_self">1.6 constructor 构造函数</a></li><li><a href="#17__258" target="_self">1.7 构造函数、实例、原型对象三者之间的关系</a></li><li><a href="#18__260" target="_self">1.8 原型链</a></li><li><a href="#19_Javascript__263" target="_self">1.9 Javascript 的成员（属性或方法）查找机制（规则）</a></li><li><a href="#110_this_269" target="_self">1.10 原型对象this指向</a></li><li><a href="#111__298" target="_self">1.11 利用原型对象扩展内置对象</a></li></ul>
+   </li><li><a href="#2_305" target="_self">2、继承</a></li><li><ul><li><a href="#21_call__308" target="_self">2.1 call 方法的作用</a></li><li><a href="#22__338" target="_self">2.2 借用构造函数继承父类型属性</a></li><li><a href="#23__360" target="_self">2.3 利用原型对象继承方法</a></li><li><a href="#24ES6__399" target="_self">2.4、ES6 类的本质</a></li></ul>
+   </li><li><a href="#3ES5_417" target="_self">3、ES5中新增的方法</a></li><li><ul><li><a href="#31_ES5__418" target="_self">3.1 ES5 新增方法概述</a></li><li><a href="#32__424" target="_self">3.2 数组方法</a></li><li><ul><li><a href="#321_forEach_427" target="_self">3.2.1 迭代（遍历数组）forEach方法</a></li><li><a href="#322__filter__446" target="_self">3.2.2 筛选数组 filter 方法</a></li><li><a href="#323__some_458" target="_self">3.2.3 查找数组中是否有满足条件的元素some方法</a></li></ul>
+    </li><li><a href="#33__472" target="_self">3.3 字符串方法</a></li><li><ul><li><a href="#331_trim_473" target="_self">3.3.1 trim方法去除字符串两侧空格</a></li></ul>
+    </li><li><a href="#34__485" target="_self">3.4 对象方法</a></li><li><ul><li><a href="#341_Objectkeys__486" target="_self">3.4.1 Object.keys 方法获取对象属性名</a></li><li><a href="#342_ObjectdefineProperty_506" target="_self">3.4.2 Object.defineProperty()定义对象中新属性或修改原有的属性</a></li></ul>
+   </li></ul>
+  </li></ul>
+  </li><li><a href="#Day03_545" target="_self">Day03</a></li><li><ul><li><a href="#1_546" target="_self">1、函数的定义和调用方式</a></li><li><ul><li><a href="#11__547" target="_self">1.1 函数的定义方式</a></li><li><a href="#12__561" target="_self">1.2 函数的调用方式</a></li></ul>
+   </li><li><a href="#2this_604" target="_self">2、this</a></li><li><ul><li><a href="#21_this_605" target="_self">2.1 函数内部的this指向</a></li><li><a href="#22_this_618" target="_self">2.2 改变函数内部this指向</a></li><li><ul><li><a href="#1call_621" target="_self">**1、call方法**</a></li><li><a href="#2apply_629" target="_self">**2、apply方法**</a></li><li><a href="#3bind_642" target="_self">**3、bind方法**</a></li></ul>
+   </li></ul>
+   </li><li><a href="#3_656" target="_self">3、严格模式</a></li><li><ul><li><a href="#31__657" target="_self">3.1 什么是严格模式？</a></li><li><a href="#32__667" target="_self">3.2 开启严格模式</a></li><li><ul><li><a href="#321__670" target="_self">3.2.1 为脚本开启严格模式</a></li><li><a href="#322__683" target="_self">3.2.2 为函数开启严格模式</a></li></ul>
+    </li><li><a href="#33__686" target="_self">3.3 严格模式中的变化</a></li><li><ul><li><a href="#331__689" target="_self">3.3.1 变量规定</a></li><li><a href="#332_this_693" target="_self">3.3.2 严格模式下this指向问题</a></li><li><a href="#333__702" target="_self">3.3.3 函数变化</a></li></ul>
+   </li></ul>
+   </li><li><a href="#4_706" target="_self">4、高阶函数</a></li><li><a href="#5_712" target="_self">5、闭包</a></li><li><ul><li><a href="#51__713" target="_self">5.1 变量作用域</a></li><li><a href="#52__719" target="_self">5.2 什么是闭包</a></li><li><ul><li><a href="#521__725" target="_self">5.2.1 闭包的作用</a></li><li><a href="#522__728" target="_self">5.2.2 闭包总结</a></li></ul>
+   </li></ul>
+   </li><li><a href="#6_735" target="_self">6、递归</a></li><li><ul><li><a href="#61__736" target="_self">6.1 什么是递归？</a></li><li><a href="#62__743" target="_self">6.2 利用递归求斐波那契数列</a></li><li><a href="#63_id_760" target="_self">6.3 利用递归求：根据id返回对象的数据对象</a></li><li><a href="#64__799" target="_self">6.4 浅拷贝和深拷贝</a></li></ul>
+  </li></ul>
+  </li><li><a href="#Day04_837" target="_self">Day04</a></li><li><ul><li><a href="#1_838" target="_self">1、正则表达式概述</a></li><li><a href="#2_843" target="_self">2、正则表达式的特点</a></li><li><a href="#3Javascript_850" target="_self">3、正则表达式在Javascript中的使用</a></li><li><ul><li><a href="#31__851" target="_self">3.1 创建正则表达式</a></li><li><a href="#32__test_865" target="_self">3.2 测试正则表达式 test</a></li></ul>
+   </li><li><a href="#4_876" target="_self">4、正则表达式中的特殊字符</a></li><li><ul><li><a href="#41__877" target="_self">4.1 正则表达式的组成</a></li><li><a href="#42__884" target="_self">4.2 边界符</a></li><li><a href="#43__893" target="_self">4.3 字符类</a></li><li><a href="#44__912" target="_self">4.4 量词符</a></li><li><a href="#45__923" target="_self">4.5 括号总结</a></li><li><a href="#46__930" target="_self">4.6 预定义类</a></li></ul>
+   </li><li><a href="#5_944" target="_self">5、正则表达式中的替换</a></li><li><ul><li><a href="#51_replace__945" target="_self">5.1 replace 替换</a></li><li><a href="#52__955" target="_self">5.2 正则表达式参数</a></li></ul>
+  </li></ul>
+  </li><li><a href="#Day06_965" target="_self">Day06</a></li><li><ul><li><a href="#1ES6_966" target="_self">1、什么是ES6</a></li><li><a href="#2let_969" target="_self">2、let关键字</a></li><li><a href="#3const_985" target="_self">3、const关键字</a></li><li><a href="#4_let_const_var__992" target="_self">4、 let const var 的区别</a></li><li><a href="#5_999" target="_self">5、解构赋值</a></li><li><ul><li><a href="#51__1002" target="_self">5.1 数组解构</a></li><li><a href="#52__1004" target="_self">5.2 对象解构</a></li></ul>
+   </li><li><a href="#6_1006" target="_self">6、箭头函数</a></li><li><ul><li><a href="#61_this_1017" target="_self">6.1 箭头函数中的this关键字</a></li></ul>
+   </li><li><a href="#7_1034" target="_self">7、剩余参数</a></li><li><ul><li><a href="#71__1037" target="_self">7.1 剩余参数和解构配合使用</a></li></ul>
+   </li><li><a href="#8ES6_1048" target="_self">8、ES6的内置对象扩展</a></li><li><ul><li><a href="#81_Array_____1049" target="_self">8.1 Array的扩展方法 扩展运算符（展开方法）</a></li><li><a href="#82_Array____Arrayfrom_1087" target="_self">8.2 Array的扩展方法 构造函数方法 Array.from()</a></li><li><a href="#83_Array__find_1104" target="_self">8.3 Array的扩展方法 实例方法find()</a></li><li><a href="#84_Array__findIndex_1128" target="_self">8.4 Array的扩展方法 实例方法findIndex()</a></li><li><a href="#85_Array__includes_1139" target="_self">8.5 Array的扩展方法 实例方法includes()</a></li><li><a href="#86_String__1150" target="_self">8.6 String的扩展方法 模板字符串</a></li><li><a href="#87_String__startsWithendsWith_1178" target="_self">8.7 String的扩展方法 实例方法 startsWith()和endsWith()</a></li><li><a href="#88_String__repeat_1190" target="_self">8.8 String的扩展方法 实例方法 repeat()</a></li></ul>
+   </li><li><a href="#9Set_1201" target="_self">9、Set数据结构</a></li><li><ul><li><a href="#91_Set__1227" target="_self">9.1 Set数据结构 实例方法</a></li><li><a href="#92_Set__1233" target="_self">9.2 Set数据结构 遍历</a></li></ul>
+  </li></ul>
+ </li></ul>
+</div>
+<p></p> 
+<h1><a name="t1"></a><a name="t1"></a><a id="Day01_1"></a>Day01</h1> 
+<h2><a name="t2"></a><a name="t2"></a><a id="1_2"></a>1、面向对象编程介绍</h2> 
+<h3><a name="t3"></a><a name="t3"></a><a id="11__3"></a>1.1 两大编程思想</h3> 
+<p>面向过程<br> 面向对象</p> 
+<h3><a name="t4"></a><a name="t4"></a><a id="12__POP_7"></a>1.2 面向过程编程 POP</h3> 
+<p>面向过程就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候再一个一个的依次调用就可以了。</p> 
+<p><strong>面向过程，就是按照我们分析好了的步骤，按照步骤解决问题。</strong></p> 
+<h3><a name="t5"></a><a name="t5"></a><a id="13__OOP_12"></a>1.3 面向对象编程 OOP</h3> 
+<p>面向对象是把事务分解成为一个个对象，然后由对象之间分工与合作；</p> 
+<p><strong>面向对象是以对象功能来划分问题，而不是步骤。</strong></p> 
+<p>在面向对象程序开发思想中，每一个对象都是功能中心，具有明确分工。<br> 面向对象编程具有灵活、代码可复用、容易维护和开发的优点，更适合多人合作的大型软件项目。</p> 
+<p><strong>面向对象的特性：封装性、继承性、多态性；</strong></p> 
+<h3><a name="t6"></a><a name="t6"></a><a id="14__22"></a>1.4 面向过程和面向对象的对比</h3> 
+<div class="table-box"><table><thead><tr><th>面向过程</th><th>面向对象</th></tr></thead><tbody><tr><td>优点：性能比面向对象高，适合跟硬件练习很紧密的东西，例如单片机就采用的面向过程编程；</td><td>优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统更加灵活、更加易于维护</td></tr><tr><td>缺点：没有面向对象易维护、易复用、易扩展</td><td>优点：性能比面向过程低</td></tr></tbody></table></div>
+<h2><a name="t7"></a><a name="t7"></a><a id="2ES6_28"></a>2、ES6中的类和对象</h2> 
+<p><strong>面向对象</strong><br> 面向对象更贴近我们的实际生活，可以使用面向对象描述现实世界事物，但是事物分为具体的事物和抽象的事物。</p> 
+<p><strong>面向对象的思维特点：</strong><br> 1、抽取（抽象）对象共有的属性和行为组织（封装）成一个类（模板）；<br> 2、对类进行实例化，获取类的对象；<br> 面向对象编程我们考虑的是有哪些对象，按照面向对象的思维特点，不断的创建对象，使用对象，指挥对象做事情；</p> 
+<h3><a name="t8"></a><a name="t8"></a><a id="21__37"></a>2.1 对象</h3> 
+<p>在Javascript中，对象是一组无序的相关属性和方法的集合，所有的事物都是对象，例如字符串、数组、数值、函数等；</p> 
+<p><strong>对象由属性和方法组成：</strong><br> 属性：事物的特征，在对象中用属性来表示（常用名词）；<br> 方法：事物的行为，在对象中用方法来表示（常用动词）；</p> 
+<h3><a name="t9"></a><a name="t9"></a><a id="22__class_44"></a>2.2 类 class</h3> 
+<p>在ES6中新增加了类的概念，可以使用class关键字声明一个类，之后以这个类来实例化对象；</p> 
+<p><strong>类</strong>抽象了对象的公共部分，它泛指某一大类（class）；<br> <strong>对象</strong>特指某一个，通过类实例化一个具体的对象；</p> 
+<h3><a name="t10"></a><a name="t10"></a><a id="23__50"></a>2.3 创建类</h3> 
+<p>语法：</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">class</span> <span class="token class-name">name</span> <span class="token punctuation">{<!-- --></span>
+  <span class="token comment">// class body</span>
+<span class="token punctuation">}</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li></ul></pre> 
+<p><strong>创建实例：</strong></p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">let</span> xx <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p><strong>注意：类必须使用new实例化对象</strong></p> 
+<h3><a name="t11"></a><a name="t11"></a><a id="24__67"></a>2.4 创建实例</h3> 
+<p>（1）通过class关键字创建类，类名习惯首字母大写；<br> （2）类里面有个constructor函数，可以接受传递过来的参数，同时返回实例对象；<br> （3）constructor 函数，只要new 生成实例时，就会自动调用这个函数，如果我们不写这个函数，类也会自动生成这个函数；<br> （4）生成实例new 不能省略；<br> （5）最后注意语法规范，创建类 类名后面不要加小括号，生成实例，类名后面加小括号，构造函数不需要加function；</p> 
+<h3><a name="t12"></a><a name="t12"></a><a id="25__74"></a>2.5 类添加方法</h3> 
+<p>语法：</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">class</span> <span class="token class-name">Star</span> <span class="token punctuation">{<!-- --></span>
+            <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">sing</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我会唱歌"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">dance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我会跳舞"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li></ul></pre> 
+<p>（1）类里面所有的函数不需要写function；<br> （2）多个函数方法之间不需要添加逗号分隔；</p> 
+<h2><a name="t13"></a><a name="t13"></a><a id="3_93"></a>3、类的继承</h2> 
+<h3><a name="t14"></a><a name="t14"></a><a id="31__extends_94"></a>3.1 继承 extends</h3> 
+<p>现实中的继承：子承父业，比如我们都继承了父亲的姓；<br> 程序中的继承：子类可以继承父类的一些属性和方法；</p> 
+<p>语法：</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">class</span> <span class="token class-name">Father</span><span class="token punctuation">{<!-- --></span> <span class="token comment">// 父类</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span> <span class="token punctuation">{<!-- --></span> <span class="token comment">//子类继承父类</span>
+<span class="token punctuation">}</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li></ul></pre> 
+<h3><a name="t15"></a><a name="t15"></a><a id="32_super_106"></a>3.2 super关键字</h3> 
+<p><strong>super关键字用于访问和调用对象父类上的函数，可以调用父类的构造函数</strong>，也可以调用父类的普通函数；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+              <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//调用父类的构造函数</span>
+            <span class="token punctuation">}</span>
+
+<span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//调用父类的普通函数</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li></ul></pre> 
+<h3><a name="t16"></a><a name="t16"></a><a id="33_super_117"></a>3.3 super调用父类普通函数以及继承中属性方法查找原则(就近原则）</h3> 
+<p>1、继承中，如果实例化子类输出一个方法，先看子类有没有这个方法，如果有就先执行子类的方法；<br> 2、继承中，如果子类里面没有，就去查找父类有么有这个方法，如果有，就执行父类的这个方法（就近原则）；</p> 
+<h3><a name="t17"></a><a name="t17"></a><a id="34_superthis_121"></a>3.4 super必须在子类this之前调用</h3> 
+<h3><a name="t18"></a><a name="t18"></a><a id="35__122"></a>3.5 三个注意点</h3> 
+<p>1、在ES6中类没有变量提升，所以必须先定义类，才能通过类实例化对象；<br> 2、类里面的共有的属性和方法一定要加this使用；<br> 3、类里面this的指向问题；<br> 4、constructor里面的this指向实例对象，方法里面的this指向这个方法的调用者；</p> 
+<h2><a name="t19"></a><a name="t19"></a><a id="4_128"></a>4、面向对象案例</h2> 
+<p><img src="https://img-blog.csdnimg.cn/20210325180743778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> <img src="https://img-blog.csdnimg.cn/20210325180812401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> <img src="https://img-blog.csdnimg.cn/20210326085835400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> <img src="https://img-blog.csdnimg.cn/20210326100200434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> 案例总结：<br> 1、在切换选项卡模块，用到了之前的排他思想；<br> 2、this的指向问题很重要；<br> 3、双击事件 ：ondblclick<br> 4、that.lis[index].click()可以自动触发点击事件，不需要鼠标再去点击<br> 5、input.select(); 让文本框里面的文字处于选定状态<br> 6、this.blur(); 自动触发失去焦点事件<br> 7、禁止双击选中文字</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">window<span class="token punctuation">.</span>getSelection<span class="token operator">?</span>window<span class="token punctuation">.</span><span class="token function">getSelection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeAllRanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>document<span class="token punctuation">.</span>selection<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>8、逻辑判断</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token comment">// 当that.lis[index]为真，才会执行that.lis[index].click()</span>
+            that<span class="token punctuation">.</span>lis<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> that<span class="token punctuation">.</span>lis<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li></ul></pre> 
+<p>9、阻止冒泡</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> <span class="token comment">//阻止冒泡，点击关闭按钮，因为冒泡，也会触发父级元素的点击事件</span>
+            e<span class="token punctuation">.</span><span class="token function">stopPropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li></ul></pre> 
+<p>10、添加元素</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> that<span class="token punctuation">.</span>ul<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span><span class="token string">"beforeend"</span><span class="token punctuation">,</span> li<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>insertAdjacentHTML(“beforeend”, li)；这个函数可以把字符串直接添加到HTML中，第一个参数意思是把要添加的li添加到后面；</p> 
+<p>11、this.lis[i].onclick = this.toggleTab; // 后面不能加括号，否则页面加载就会调用</p> 
+<hr> 
+<h1><a name="t20"></a><a name="t20"></a><a id="Day02_169"></a>Day02</h1> 
+<h2><a name="t21"></a><a name="t21"></a><a id="1_170"></a>1、构造函数和原型</h2> 
+<p><mark><strong>在ES6之前，我们想使用面向对象，就使用构造函数创建面向对象；</strong></mark></p> 
+<h3><a name="t22"></a><a name="t22"></a><a id="11__173"></a>1.1 概述</h3> 
+<p>在典型的OOP的语言中（如java），都存在类的概念，类就是对象的模板，对象就是类的实例，<br> 但在ES6之前，JS中并没有引入类的概念；</p> 
+<p>ES6，全称ECMAScript 6.0 ,2015.06发布。但是目前浏览器的Javascript是ES5版本，大多数高版本的浏览器也支持ES6，不过只实现了ES6的部分特性和功能；</p> 
+<p>在ES6之前，对象不是基于类创建的，而是用一种称为<strong>构造函数</strong>的特殊函数来定义对象和它们的特征；</p> 
+<p>创建对象可以通过以下三种方式：<br> 1、对象字面量；<br> 2、new Object()；<br> 3、自定义构造函数</p> 
+<h3><a name="t23"></a><a name="t23"></a><a id="12__186"></a>1.2 构造函数</h3> 
+<p>构造函数一种特殊的函数，主要用来初始化对象，即为对象成员变量赋初始值，它总与new一起使用。我们可以把对象中一些公共的属性和方法抽取出来，然后封装到这个函数里面。</p> 
+<h4><a id="1JS_189"></a><strong>（1）在JS中，使用构造函数时要注意以下两点：</strong></h4> 
+<p>1、构造函数用于创建某一类对象，其<strong>首字母要大写</strong>；<br> 2、构造函数要<strong>和new一起使用</strong>才有意义；</p> 
+<h4><a id="2new__193"></a><strong>（2）new 在执行时会做四件事情：</strong></h4> 
+<p>（1）在内存中创建一个新的空对象；<br> （2）让this指向这个新的对象；<br> （3）执行构造函数里面的代码，给这个新对象添加属性和方法；<br> （4）返回这个新对象（所以这个构造函数里面不需要return）；</p> 
+<h4><a id="3_199"></a>（3）实例成员和静态成员</h4> 
+<p>javascript的构造函数之后可以添加一些成员，可以在构造函数本身上添加，也可以在构造函数内部的this上添加。通过这两种方式添加的成员，就分别称为<strong>静态成员</strong>和<strong>实例成员</strong>。</p> 
+<p><strong>静态成员</strong>：在构造函数本身添加的成员称为静态成员，<strong>只能由构造函数本身来访问</strong>；<br> <strong>实例成员</strong>：在构造函数内部创建的对象成员称为实例成员，<strong>只能由实例化的对象来访问</strong>；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token comment">// 利用构造函数创建对象</span>
+    <span class="token comment">// 构造函数中的属性和方法我们称为成员，成员可以添加</span>
+    <span class="token comment">// 1、实例成员 就是构造函数内部通过this添加的成员 name age 就是实例成员</span>
+    <span class="token keyword">function</span> <span class="token function">Star</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 创建实例</span>
+    <span class="token keyword">const</span> zhangsan <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Star</span><span class="token punctuation">(</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>zhangsan<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// 2、静态成员 在构造函数本身上添加的成员 sex就是静态成员</span>
+    Star<span class="token punctuation">.</span>sex <span class="token operator">=</span> <span class="token string">"男"</span><span class="token punctuation">;</span> <span class="token comment">// 不能通过对象来访问</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Star<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li></ul></pre> 
+<h3><a name="t24"></a><a name="t24"></a><a id="13__225"></a>1.3 构造函数的问题</h3> 
+<p>构造函数方法很好用，但是存在浪费内存的问题。每次创建实例，都会开辟单独的空间存放同一个函数，浪费内存。</p> 
+<p>我们希望所有的对象使用同一个函数，这样就比较节省内存，那么怎么做呢？</p> 
+<h3><a name="t25"></a><a name="t25"></a><a id="14_prototype_230"></a>1.4 构造函数原型prototype</h3> 
+<p>构造函数通过原型分配的函数是所有对象<strong>共享的</strong>。</p> 
+<p>Javascript规定，<strong>每一个构造函数都有一个prototype属性</strong>，指向另一个对象。注意这个prototype就是一个对象，这个对象的所有属性和方法，都会被构造函数所拥有；</p> 
+<p><strong>我们可以把那么不变的方法，直接定义在<code>prototype</code>对象上，这样所有对象的实例就可以共享这些方法。</strong></p> 
+<p><strong>原型是什么</strong>：一个对象，我们也称为prototype为原型对象；<br> <strong>原型的作用是什么</strong>：<mark>共享方法；</mark></p> 
+<h3><a name="t26"></a><a name="t26"></a><a id="15___proto___240"></a>1.5 对象原型__proto__</h3> 
+<p>对象都会有一个属性__proto__指向构造函数的prototype原型对象，之所以我们对象可以使用构造函数prototype原型对象的属性和方法，就是因为对象有__proto__原型的存在。</p> 
+<p>（1）__proto__对象原型和原型对象prototype是等价的；<br> （2）__proto__对象原型的意义就在于为对象的查找机制提供一个方向，或者说一条路线，但是它是一个<strong>非标准属性，因此实际开发中，不可以使用这个属性</strong>，它只是内部指向原型对象prototype；</p> 
+<p><strong>方法的查找规则：</strong><br> （1）首先看实例对象身上是否有sing方法，如果有执行这个对象上的sing<br> （2）如果没有sing这个方法，因为有__proto__的存在，就去构造函数原型对象prototype身上去查找sing这个方法；</p> 
+<h3><a name="t27"></a><a name="t27"></a><a id="16__constructor__251"></a>1.6 constructor 构造函数</h3> 
+<p>对象原型（<strong>proto</strong>）和构造函数原型对象（prototype）里面都有一个<code>constructor</code>属性，constructor我们称为构造函数，因为它指回构造函数本身。</p> 
+<p>很多情况下，我们需要手动的利用constructor这个属性指回 原来的构造函数；<br> 如果我们修改了原来的原型对象，给原型对象赋值的是一个对象，则必须手动的利用constructor指回原来的构造函数；<br> <img src="https://img-blog.csdnimg.cn/2021040810341935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> 
+<h3><a name="t28"></a><a name="t28"></a><a id="17__258"></a>1.7 构造函数、实例、原型对象三者之间的关系</h3> 
+<p><img src="https://img-blog.csdnimg.cn/20210408112857366.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> 
+<h3><a name="t29"></a><a name="t29"></a><a id="18__260"></a>1.8 原型链</h3> 
+<p><img src="https://img-blog.csdnimg.cn/20210408114843711.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> 
+<h3><a name="t30"></a><a name="t30"></a><a id="19_Javascript__263"></a>1.9 Javascript 的成员（属性或方法）查找机制（规则）</h3> 
+<p>1、当访问一个对象的属性（包括方法）时，首先查找这个<strong>对象自身</strong>有没有该属性；<br> 2、如果没有就查找它的原型（也就是__proto__指向的<strong>prototype原型对象</strong>）；<br> 3、如果还没有就查找原型对象的原型（<strong>Object的原型对象</strong>）；<br> 4、以此类推一直找到Object为止（<strong>null</strong>）;</p> 
+<h3><a name="t31"></a><a name="t31"></a><a id="110_this_269"></a>1.10 原型对象this指向</h3> 
+<p>1、在构造函数中，里面this指向的是对象实例 zhangsan<br> 2、原型对象函数里面的this,指向的是实例对象 zhangsan</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token keyword">function</span> <span class="token function">Star</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> that<span class="token punctuation">;</span>
+    Star<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span>
+        constructor<span class="token punctuation">:</span> Star<span class="token punctuation">,</span>
+        sing<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"I can sing"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        movie<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"I can dance"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 1、在构造函数中，里面this指向的是对象实例 zhangsan</span>
+    <span class="token keyword">const</span> zhangsan <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Star</span><span class="token punctuation">(</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 2、原型对象函数里面的this,指向的是实例对象 zhangsan</span>
+    zhangsan<span class="token punctuation">.</span><span class="token function">sing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>that<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li></ul></pre> 
+<h3><a name="t32"></a><a name="t32"></a><a id="111__298"></a>1.11 利用原型对象扩展内置对象</h3> 
+<p>可以通过原型对象，对原来的内置对象进行扩展自定义的方法。比如给数组增加自定义求偶数和的功能；</p> 
+<p><strong>注意：数组和字符串内置对象不能给原型对象覆盖操作Array.prototype = {}，只能是Array.prototype.xxx = function(){}的方式；</strong></p> 
+<hr> 
+<h2><a name="t33"></a><a name="t33"></a><a id="2_305"></a>2、继承</h2> 
+<p>ES6之前并没有给我们提供extends继承，我们可以通过<strong>构造函数+原型对象</strong>模拟实现继承，被称为<strong>组合继承</strong>。</p> 
+<h3><a name="t34"></a><a name="t34"></a><a id="21_call__308"></a>2.1 call 方法的作用</h3> 
+<p>1、可以调用函数；<br> 2、可以改变这个函数的this指向；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> arg1<span class="token punctuation">,</span>agr2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+thisArg<span class="token punctuation">:</span>当前调用函数<span class="token keyword">this</span>的指向对象；
+arg1<span class="token operator">/</span>arg2<span class="token punctuation">:</span>传递的其他参数
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li></ul></pre> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"111"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">let</span> o <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span>
+            name<span class="token punctuation">:</span><span class="token string">"andy"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token comment">// 1、调用函数</span>
+        fn<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 2、改变函数的this指向</span>
+        <span class="token comment">// 此时这个函数的this指向的是o这个对象</span>
+        fn<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>o <span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li></ul></pre> 
+<h3><a name="t35"></a><a name="t35"></a><a id="22__338"></a>2.2 借用构造函数继承父类型属性</h3> 
+<p><strong>核心原理：通过call()把父类型的this指向子类型的this，这样就可以实现子类型继承父类型的属性；</strong></p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token comment">// 1、父构造函数</span>
+    <span class="token keyword">function</span> <span class="token function">Father</span><span class="token punctuation">(</span>uname<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>uname <span class="token operator">=</span> uname<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 2、子构造函数</span>
+    <span class="token keyword">function</span> <span class="token function">Son</span><span class="token punctuation">(</span>uname<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+        <span class="token comment">// this指向子构造函数的对象实例</span>
+        Father<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> uname<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> son <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>son<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li></ul></pre> 
+<h3><a name="t36"></a><a name="t36"></a><a id="23__360"></a>2.3 利用原型对象继承方法</h3> 
+<p><img src="https://img-blog.csdnimg.cn/20210408141918810.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token comment">// 1、父构造函数</span>
+        <span class="token keyword">function</span> <span class="token function">Father</span><span class="token punctuation">(</span>uname<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>uname <span class="token operator">=</span> uname<span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        Father<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">money</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">100000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        Son<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Father</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Son<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 2、子构造函数</span>
+        <span class="token keyword">function</span> <span class="token function">Son</span><span class="token punctuation">(</span>uname<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+            <span class="token comment">// this指向子构造函数的对象实例</span>
+            Father<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> uname<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        Son<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">exam</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"孩子要考试"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">const</span> son <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        son<span class="token punctuation">.</span><span class="token function">money</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li></ul></pre> 
+<p><img src="https://img-blog.csdnimg.cn/20210408142306838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> 
+<h3><a name="t37"></a><a name="t37"></a><a id="24ES6__399"></a>2.4、ES6 类的本质</h3> 
+<p><mark><strong>ES6之前通过 构造函数 + 原型 实现面向对象编程；</strong></mark><br> （1）构造函数有原型对象prototype；<br> （2）构造函数原型对象prototype里面有constructor指向构造函数本身；<br> （3）构造函数可以通过原型对象添加方法；<br> （4）构造函数创建的实例对象有__proto__原型指向构造函数的原型对象；</p> 
+<p><mark><strong>ES6 通过类 实现面向对象编程；</strong></mark></p> 
+<p><mark><strong>类的本质其实就是一个函数，我们也可以简单的认为，类就是构造函数的另一种写法；</strong></mark></p> 
+<p>1、class本质还是function<br> 2、类的所有方法都定义在类的prototype属性上；<br> 3、类创建的实例，里面也有__proto__指向类的prototype原型对象；<br> 4、所以ES6的类它的绝大部分功能，ES5都可以做到，新的class写法只是让对象原型的写法更加清晰、更像面向对象编程的语法而已；<br> 5、所以ES6的类其实就是语法糖；<br> 6、语法糖：语法糖就是一种便捷写法。简单理解，有两种方法可以实现同样的功能，但是一种写法更加清晰、方便，那么这个方法就是语法糖；</p> 
+<h2><a name="t38"></a><a name="t38"></a><a id="3ES5_417"></a>3、ES5中新增的方法</h2> 
+<h3><a name="t39"></a><a name="t39"></a><a id="31_ES5__418"></a>3.1 ES5 新增方法概述</h3> 
+<p>ES5中给我们新增了一些方法，可以很方便的操作数组或者字符串，这些方法主要包括：<br> （1）数组方法<br> （2）字符串方法<br> （3）对象方法</p> 
+<h3><a name="t40"></a><a name="t40"></a><a id="32__424"></a>3.2 数组方法</h3> 
+<p>迭代（遍历）方法：forEach()、map()、filter()、some()、every()；</p> 
+<h4><a id="321_forEach_427"></a>3.2.1 迭代（遍历数组）forEach方法</h4> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">array<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>currentValue<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>currentValue:数组当前项的值；<br> index：数组当前项的索引；<br> arr：数组对象本身；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arr<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sum <span class="token operator">+=</span> value<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li></ul></pre> 
+<h4><a id="322__filter__446"></a>3.2.2 筛选数组 filter 方法</h4> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">array<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>currentValue<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>filter()方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素，<strong>主要用于筛选数组；</strong></p> 
+<p><strong>注意它直接返回一个新数组；</strong></p> 
+<p>currentValue:数组当前项的值；<br> index：数组当前项的索引；<br> arr：数组对象本身；</p> 
+<h4><a id="323__some_458"></a>3.2.3 查找数组中是否有满足条件的元素some方法</h4> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">array<span class="token punctuation">.</span><span class="token function">some</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>currentValue<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+currentValue<span class="token punctuation">:</span>数组当前项的值；
+index：数组当前项的索引；
+arr：数组对象本身；
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li></ul></pre> 
+<p>some()方法用于检测数组中的元素是否满足指定条件。通俗点，查找数组中是否有满足条件的元素；</p> 
+<p><strong>注意：它返回值是布尔值，如果查找到这个元素，就返回true，如果查找不到就返回false；如果 查询数组中唯一的元素，some效率更高</strong></p> 
+<p>如果找到第一个满足条件的元素，则终止循环，不再继续查找；</p> 
+<h3><a name="t41"></a><a name="t41"></a><a id="33__472"></a>3.3 字符串方法</h3> 
+<h4><a id="331_trim_473"></a>3.3.1 trim方法去除字符串两侧空格</h4> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'   andy'</span><span class="token punctuation">;</span>
+        <span class="token comment">// 去除左右两侧的空格</span>
+        str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li></ul></pre> 
+<h3><a name="t42"></a><a name="t42"></a><a id="34__485"></a>3.4 对象方法</h3> 
+<h4><a id="341_Objectkeys__486"></a>3.4.1 Object.keys 方法获取对象属性名</h4> 
+<p>用于获取对象自身所有的属性；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>效果类似于for…in…<br> <strong>返回一个由属性名组成的数组；</strong></p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span>
+            id<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+            name<span class="token punctuation">:</span><span class="token string">"小牧"</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">let</span> keys <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>keys<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li></ul></pre> 
+<h4><a id="342_ObjectdefineProperty_506"></a>3.4.2 Object.defineProperty()定义对象中新属性或修改原有的属性</h4> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span>prop<span class="token punctuation">,</span>descriptor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>参数说明：<br> obj:必需。目标对象；<br> prop：必需。需定义或修改的属性的名字；<br> descriptor:必需。目标属性所拥有的特性；</p> 
+<p>第三个参数进一步说明：以对象形式书写{}书写<br> value：设置属性的值 默认为undefined；<br> writeable:值是否可以重写。true|false 默认为false；<br> enumerable:目标属性是否可以被枚举。true|false 默认为false；<br> configurable:目标属性是否可以被删除或是否可以再次修改特性 true|false 默认为false；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span>
+            id<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+            name<span class="token punctuation">:</span><span class="token string">"小米"</span><span class="token punctuation">,</span>
+            price<span class="token punctuation">:</span><span class="token string">"1000"</span>
+        <span class="token punctuation">}</span>
+
+        Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token string">'num'</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span>
+            value<span class="token punctuation">:</span><span class="token number">1000</span><span class="token punctuation">,</span>
+            writable<span class="token punctuation">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+            enumerable<span class="token punctuation">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+            configurable<span class="token punctuation">:</span><span class="token boolean">false</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// {id: 1, name: "小米", price: "1000", num: 1000}</span>
+        obj<span class="token punctuation">.</span>num <span class="token operator">=</span> <span class="token number">2000</span><span class="token punctuation">;</span>  
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// {id: 1, name: "小米", price: "1000", num: 1000}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li></ul></pre> 
+<hr> 
+<h1><a name="t43"></a><a name="t43"></a><a id="Day03_545"></a>Day03</h1> 
+<h2><a name="t44"></a><a name="t44"></a><a id="1_546"></a>1、函数的定义和调用方式</h2> 
+<h3><a name="t45"></a><a name="t45"></a><a id="11__547"></a>1.1 函数的定义方式</h3> 
+<p>1、函数声明方式function关键字（命名函数）；<br> 2、函数表达式（匿名函数）；<br> 3、new Function()</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">var</span> fn <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">'参数1'</span><span class="token punctuation">,</span><span class="token string">'参数2'</span><span class="token punctuation">,</span><span class="token operator">...</span><span class="token punctuation">,</span><span class="token string">'函数体'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>Function里面参数都必须是字符串格式；<br> 第三种方式执行效率低，也不方便书写，因此很少使用；<br> 所有函数都是function的实例（对象）；<br> 函数也属于对象；</p> 
+<p><img src="https://img-blog.csdnimg.cn/20210409095248295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> 
+<h3><a name="t46"></a><a name="t46"></a><a id="12__561"></a>1.2 函数的调用方式</h3> 
+<p><strong>6种函数的调用方式：</strong><br> 1、普通函数<br> 2、对象的方法<br> 3、构造函数<br> 4、绑定事件的函数<br> 5、定时器函数<br> 6、立即执行函数 立即执行函数是自动调用的</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token comment">// 函数的调用方式</span>
+        <span class="token comment">// 1、普通函数</span>
+        <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"普通函数"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+        <span class="token comment">// 2、对象的方法</span>
+        <span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span>
+            sayHi<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"对象的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        o<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 3、构造函数</span>
+        <span class="token keyword">function</span> <span class="token function">Star</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span>
+        <span class="token keyword">new</span> <span class="token class-name">Star</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 4、绑定事件的函数</span>
+        btn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span>
+
+        <span class="token comment">// 5、定时器函数</span>
+        <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 6、立即执行函数  立即执行函数是自动调用的</span>
+        <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"立即执行函数"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li><li style="color: rgb(153, 153, 153);">31</li></ul></pre> 
+<h2><a name="t47"></a><a name="t47"></a><a id="2this_604"></a>2、this</h2> 
+<h3><a name="t48"></a><a name="t48"></a><a id="21_this_605"></a>2.1 函数内部的this指向</h3> 
+<p>这些this的指向，是当我们调用函数的时候确定的。调用方式的不同决定了this的指向不同；<br> 一般指向我们的调用者。</p> 
+<div class="table-box"><table><thead><tr><th>调用方式</th><th>this指向</th></tr></thead><tbody><tr><td>普通函数调用</td><td>window</td></tr><tr><td>构造函数调用</td><td>实例对象 原型对象里面的方法也指向实例对象</td></tr><tr><td>对象方法调用</td><td>该方法所属对象</td></tr><tr><td>事件绑定方法</td><td>绑定事件对象</td></tr><tr><td>定时器函数</td><td>window</td></tr><tr><td>立即执行函数</td><td>window</td></tr></tbody></table></div>
+<h3><a name="t49"></a><a name="t49"></a><a id="22_this_618"></a>2.2 改变函数内部this指向</h3> 
+<p>Javascript 为我们专门提供了一些函数方法来帮助我们更优雅的处理函数内部this的指向问题，常用的有bind()、call()、apply()三种方法。</p> 
+<h4><a id="1call_621"></a><strong>1、call方法</strong></h4> 
+<p>call()方法调用一个对象。简单理解为调用函数的方式，但是它可以改变函数的this指向；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">fun<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span>arg1<span class="token punctuation">,</span>agr2<span class="token punctuation">,</span><span class="token operator">...</span><span class="token punctuation">)</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p><strong>主要应用：实现继承</strong></p> 
+<h4><a id="2apply_629"></a><strong>2、apply方法</strong></h4> 
+<p>apply()方法调用一个函数。简单理解为调用函数的方式，但是它可以改变函数的this指向。</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">fun<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> <span class="token punctuation">[</span>argsArray<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>thisArg:在fun函数运行时指定的this值；<br> argsArray:传递的值，必须包含在数组里面；<br> 返回值就是函数的返回值，因为它就是调用函数；</p> 
+<p><strong>apply的主要应用 比如说我们可以利用apply 借助于数学内置对象求最大值</strong></p> 
+<h4><a id="3bind_642"></a><strong>3、bind方法</strong></h4> 
+<p>bind()方法不会调用函数。但是能改变函数内部this指向；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">fun<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> arg1<span class="token punctuation">,</span>arg2<span class="token punctuation">,</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>thisArg:在fun函数运行时指定的this值；<br> arg1,arg2:传递的其他参数；<br> 返回由指定的this值和初始化参数改造的<strong>原函数拷贝</strong>；</p> 
+<p><strong>主要应用：如果有的函数我们不需要立即调用，但是又想改变这个函数内部的this指向，此时用bind；<br> 情境：我们有一个按钮，当我们点击了之后，就禁用这个按钮，3秒钟之后开启这个按钮</strong></p> 
+<h2><a name="t50"></a><a name="t50"></a><a id="3_656"></a>3、严格模式</h2> 
+<h3><a name="t51"></a><a name="t51"></a><a id="31__657"></a>3.1 什么是严格模式？</h3> 
+<p>Javascript除了提供正常模式外，还提供了严格模式（strict mode）。ES5的严格模式是采用具有限制性Javascript变体的一种方式。即在严格条件下运行JS代码；</p> 
+<p>严格模式在IE10以上版本的浏览器中才会被支持，旧版本浏览器中会被忽略；<br> 严格模式对正常的Javascript语义做了一些更改：<br> 1、消除了Javascript语法的一些不合理、不严谨之处，减少了一些怪异行为；<br> 2、消除代码运行的一些不安全之处，保证代码运行的安全；<br> 3、提高编译器效率，增加运行速度；<br> 4、禁用了在ECMAScript的未来版本中可能会定义的一些语法，为未来新版本的Javascript做好铺垫。比如一些保留字如：class、enum、export、extends、import、super不能做变量名；</p> 
+<h3><a name="t52"></a><a name="t52"></a><a id="32__667"></a>3.2 开启严格模式</h3> 
+<p>严格模式可以应用到整个脚本或个别函数中。因此在使用时，我们可以将严格模式分为脚本开启严格模式和为函数开启严格模式两种情况。</p> 
+<h4><a id="321__670"></a>3.2.1 为脚本开启严格模式</h4> 
+<p>有的script基于是严格模式，有的script脚本是正常模式，这样不利于文件合并，所以可以将整个脚本文件放在一个立即执行的匿名函数之中，这样独立创建一个作用域而不影响其他script脚本；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+  <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+      <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li></ul></pre> 
+<h4><a id="322__683"></a>3.2.2 为函数开启严格模式</h4> 
+<p>要给某个函数开启严格模式，需要把“use strict”；（或‘use strict’；）声明放在函数体所有语句之前；</p> 
+<h3><a name="t53"></a><a name="t53"></a><a id="33__686"></a>3.3 严格模式中的变化</h3> 
+<p>严格模式对Javascript的语法和行为，都做了一些改变；</p> 
+<h4><a id="331__689"></a>3.3.1 变量规定</h4> 
+<p>1、在正常模式中，如果一个变量没有声明就赋值，默认是全局变量。严格模式禁止这种用法，变量都必须先用var命令声明，然后再使用；<br> 2、我们不能随意删除已经声明好的变量；</p> 
+<h4><a id="332_this_693"></a>3.3.2 严格模式下this指向问题</h4> 
+<p>1、以前在全局作用域函数中的this指向window对象；<br> <strong>2、严格模式下全局作用域中函数中的this是undefined；</strong><br> 3、以前构造函数时不加new也可以调用，当普通函数，this指向全局对象；<br> 4、严格模式下，如果构造函数不加new调用，this会报错；<br> 5、new实例化的构造函数指向创建的对象实例；<br> 6、严格模式下定时器this还是指向window；<br> 7、事件、对象还是指向调用者；</p> 
+<h4><a id="333__702"></a>3.3.3 函数变化</h4> 
+<p>1、严格模式下函数里面的参数不允许有重名；<br> 2、函数必须声明在顶层。新版本的Javascript会引入“块级作用域”（ES6中已引入）。为了与新版本接轨，不允许在非函数的代码块内声明函数。</p> 
+<h2><a name="t54"></a><a name="t54"></a><a id="4_706"></a>4、高阶函数</h2> 
+<p><strong>高阶函数</strong>是对其他函数进行操作的函数，它<strong>接收函数作为参数</strong>或<strong>将函数作为返回值输出</strong>。</p> 
+<p>函数也是一种数据类型，同样可以作为参数，传递给另外一个参数使用。最典型的就是作为回调函数。</p> 
+<h2><a name="t55"></a><a name="t55"></a><a id="5_712"></a>5、闭包</h2> 
+<h3><a name="t56"></a><a name="t56"></a><a id="51__713"></a>5.1 变量作用域</h3> 
+<p>变量根据作用域的不同分为两种：全局变量和局部变量；<br> 1、函数内部可以使用全局变量；<br> 2、函数外部不可以使用局部变量；<br> 3、当函数执行完毕，本作用域内的局部变量会销毁；</p> 
+<h3><a name="t57"></a><a name="t57"></a><a id="52__719"></a>5.2 什么是闭包</h3> 
+<p><strong>闭包（closure）<strong>指有权访问另一个函数作用域中变量的</strong>函数</strong>；<br> 简单理解就是，一个作用域可以访问另外一个函数内部的局部变量；</p> 
+<p><strong>被访问变量所在的函数</strong>就是<strong>闭包函数</strong>；</p> 
+<h4><a id="521__725"></a>5.2.1 闭包的作用</h4> 
+<p>闭包的主要作用：延伸了变量的作用范围；</p> 
+<h4><a id="522__728"></a>5.2.2 闭包总结</h4> 
+<p><strong>1、闭包是什么？</strong><br> 闭包是一个函数（一个作用域可以访问另一个函数的局部变量）；</p> 
+<p><strong>2、闭包的作用是什么？</strong><br> 延伸变量的作用范围；</p> 
+<h2><a name="t58"></a><a name="t58"></a><a id="6_735"></a>6、递归</h2> 
+<h3><a name="t59"></a><a name="t59"></a><a id="61__736"></a>6.1 什么是递归？</h3> 
+<p>如果一个函数在内部可以调用其本身，那么这个函数就是递归函数。简单理解：函数内部自己调用自己，这个函数就是递归函数。</p> 
+<p>递归函数的作用和循环效果一样。</p> 
+<p>由于递归很容易发生“栈溢出”错误（stack overflow），所以必须要加退出条件return；</p> 
+<h3><a name="t60"></a><a name="t60"></a><a id="62__743"></a>6.2 利用递归求斐波那契数列</h3> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> n<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token function">fn</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fn</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// fn(3-1) + fn(3-2) =&gt;fn(2)+fn(1)</span>
+        <span class="token comment">// 1+1</span>
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li></ul></pre> 
+<h3><a name="t61"></a><a name="t61"></a><a id="63_id_760"></a>6.3 利用递归求：根据id返回对象的数据对象</h3> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{<!-- --></span>
+                id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                name<span class="token punctuation">:</span> <span class="token string">"家电"</span><span class="token punctuation">,</span>
+                goods<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{<!-- --></span>
+                    id<span class="token punctuation">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
+                    gname<span class="token punctuation">:</span> <span class="token string">'冰箱'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{<!-- --></span>
+                    id<span class="token punctuation">:</span> <span class="token number">22</span><span class="token punctuation">,</span>
+                    gname<span class="token punctuation">:</span> <span class="token string">"洗衣机"</span>
+                <span class="token punctuation">}</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{<!-- --></span>
+                id<span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                name<span class="token punctuation">:</span><span class="token string">"服饰"</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+
+        <span class="token comment">// 我们想要做输入id号，就可以返回数据对象</span>
+        <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> id<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+            <span class="token keyword">let</span> o <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+            data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>id <span class="token operator">==</span> id<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+                    o <span class="token operator">=</span> item<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>goods <span class="token operator">&amp;&amp;</span> item<span class="token punctuation">.</span>goods<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+                    o <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>goods<span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+            <span class="token keyword">return</span> o<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token function">fn</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li><li style="color: rgb(153, 153, 153);">30</li><li style="color: rgb(153, 153, 153);">31</li><li style="color: rgb(153, 153, 153);">32</li><li style="color: rgb(153, 153, 153);">33</li><li style="color: rgb(153, 153, 153);">34</li></ul></pre> 
+<h3><a name="t62"></a><a name="t62"></a><a id="64__799"></a>6.4 浅拷贝和深拷贝</h3> 
+<p>1、浅拷贝只是拷贝一层，更深层次对象级别的只拷贝引用，修改值，被拷贝的值也会发生变化；<br> 2、深拷贝拷贝多层，每一级别的数据都会拷贝；<br> 3、Object.assign(target,sourceObj); ES6新增方法；</p> 
+<p><strong>深拷贝：</strong></p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span>
+            name<span class="token punctuation">:</span><span class="token string">"andy"</span><span class="token punctuation">,</span>
+            goods<span class="token punctuation">:</span><span class="token punctuation">[</span>
+                <span class="token punctuation">{<!-- --></span>name<span class="token punctuation">:</span><span class="token string">"nihao"</span><span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token keyword">function</span> <span class="token function">deepCopy</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+                <span class="token comment">// 判断我们的属性值属于哪种数据类型</span>
+                <span class="token keyword">var</span> item <span class="token operator">=</span> obj<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token comment">// 判断这个值是否是数组</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>item <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+                    o<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token function">deepCopy</span><span class="token punctuation">(</span>o<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>item <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+                     <span class="token comment">// 判断这个值是否是对象</span>
+                    o<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+                    <span class="token function">deepCopy</span><span class="token punctuation">(</span>o<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{<!-- --></span>
+                    <span class="token comment">// 属于简单数据类型</span>
+                    o<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">deepCopy</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> obj<span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li><li style="color: rgb(153, 153, 153);">22</li><li style="color: rgb(153, 153, 153);">23</li><li style="color: rgb(153, 153, 153);">24</li><li style="color: rgb(153, 153, 153);">25</li><li style="color: rgb(153, 153, 153);">26</li><li style="color: rgb(153, 153, 153);">27</li><li style="color: rgb(153, 153, 153);">28</li><li style="color: rgb(153, 153, 153);">29</li></ul></pre> 
+<h1><a name="t63"></a><a name="t63"></a><a id="Day04_837"></a>Day04</h1> 
+<h2><a name="t64"></a><a name="t64"></a><a id="1_838"></a>1、正则表达式概述</h2> 
+<p>正则表达式（Regular Expression）是用于匹配字符串中字符组合的模式。在Javascript中，正则表达式也是对象。</p> 
+<p>正则表达式通常被用来检索、替换哪些符合某个模式（<strong><mark>规则</mark></strong>）的文本，例如验证表单：用户名表单只能输入英文字母、数字或者下划线，昵称输入框可以输入中文（<strong><mark>匹配</mark></strong>）。此外，正则表达式还常用于过滤页面内容中的一些敏感词，或从字符串中获取我们想要的特定部分（<strong><mark>提取</mark></strong>）等。</p> 
+<h2><a name="t65"></a><a name="t65"></a><a id="2_843"></a>2、正则表达式的特点</h2> 
+<p>1、灵活性、逻辑性和功能性非常的强；<br> 2、可以迅速地用极简单的方式达到字符串的复杂控制；<br> 3、对于刚接触的人来说，比较晦涩难懂。比如：^\w+;<br> 4、实际开发中，一般都是直接复制写好的正则表达式，但是要求会使用正则表达式并且根据实际情况修改正则表达式。比如用户名：<code>/^[a-z0-9]{3-16}$/</code></p> 
+<h2><a name="t66"></a><a name="t66"></a><a id="3Javascript_850"></a>3、正则表达式在Javascript中的使用</h2> 
+<h3><a name="t67"></a><a name="t67"></a><a id="31__851"></a>3.1 创建正则表达式</h3> 
+<p>在Javascript中，可以通过两种方式创建一个正则表达式；</p> 
+<p>1、通过调用RegExp对象的构造函数创建；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">var</span> 变量名 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token regex">/表达式/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>2、利用字面量创建 正则表达式</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">var</span> rg <span class="token operator">=</span> <span class="token regex">/123/</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<h3><a name="t68"></a><a name="t68"></a><a id="32__test_865"></a>3.2 测试正则表达式 test</h3> 
+<p>test()正则对象方法，用于检测字符串是否符合该规则，该对象会返回true或false，其参数是测试字符串；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">regexObj<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>1、regexObj 是写的正则表达式；<br> 2、str 我们要测试的文本；<br> 3、就是检测str文本是否符合我们写的正则表达式规范；</p> 
+<h2><a name="t69"></a><a name="t69"></a><a id="4_876"></a>4、正则表达式中的特殊字符</h2> 
+<h3><a name="t70"></a><a name="t70"></a><a id="41__877"></a>4.1 正则表达式的组成</h3> 
+<p>一个正则表达式可以由简单的字符构成，比如/abc/，也可以是简单和特殊字符的组合，比如/ab*c/.其中特殊字符也被称为元字符，在正则表达式中是具有特殊意义的专用符号，如^、$、+等。</p> 
+<p>特殊字符非常多，可以参考：<br> MDN：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions</a><br> 正则测试工具：<a href="http://tool.oschina.net/regex">http://tool.oschina.net/regex</a></p> 
+<h3><a name="t71"></a><a name="t71"></a><a id="42__884"></a>4.2 边界符</h3> 
+<p>正则表达式中的边界符（位置符）用来提示字符所处的位置，主要有两个字符：</p> 
+<div class="table-box"><table><thead><tr><th>边界符</th><th>说明</th></tr></thead><tbody><tr><td>^</td><td>表示匹配行首的文本（以谁开始）</td></tr><tr><td>$</td><td>表示匹配行尾的文本（以谁结束）</td></tr></tbody></table></div>
+<p>如果^ 和 $ 在一起，表示<strong>必须是精确匹配</strong>；</p> 
+<h3><a name="t72"></a><a name="t72"></a><a id="43__893"></a>4.3 字符类</h3> 
+<p>字符类：[]表示有一系列字符可供选择，只要匹配其中一个就可以了；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> rg <span class="token operator">=</span> <span class="token regex">/[abc]/</span><span class="token punctuation">;</span> <span class="token comment">// 只要包含有a或者包含b或者c，都返回true</span>
+        
+        <span class="token keyword">var</span> rg1 <span class="token operator">=</span> <span class="token regex">/^[abc]$/</span><span class="token punctuation">;</span><span class="token comment">// 三选一，只有是a或者b或者c，这三个字母才返回true</span>
+
+        <span class="token keyword">var</span> rg2 <span class="token operator">=</span> <span class="token regex">/^[a-z]$/</span><span class="token punctuation">;</span>  <span class="token comment">// 26个英文字母任何一个字母返回true</span>
+
+        <span class="token comment">// 字符组合</span>
+        <span class="token keyword">var</span> rg3 <span class="token operator">=</span> <span class="token regex">/^[a-zA-Z0-9_-]$/</span><span class="token punctuation">;</span>  <span class="token comment">// 多选一</span>
+
+        <span class="token comment">// 如果[]里面有^，表示取反的意思，千万和我们边界符^别混淆</span>
+        <span class="token keyword">var</span> rg4 <span class="token operator">=</span> <span class="token regex">/^[^a-zA-Z0-9_-]$/</span><span class="token punctuation">;</span>  <span class="token comment">// </span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li></ul></pre> 
+<h3><a name="t73"></a><a name="t73"></a><a id="44__912"></a>4.4 量词符</h3> 
+<p>量词符：用来设定某个模式出现的次数；</p> 
+<div class="table-box"><table><thead><tr><th>量词</th><th>说明</th></tr></thead><tbody><tr><td>*</td><td>重复零次或更多次</td></tr><tr><td>+</td><td>重复一次或更多次</td></tr><tr><td>？</td><td>重复零次或一次</td></tr><tr><td>{n}</td><td>重复n次</td></tr><tr><td>{n,}</td><td>重复n次或更多次</td></tr><tr><td>{n,m}</td><td>重复n次到m次（逗号之间不能有空格）</td></tr></tbody></table></div>
+<h3><a name="t74"></a><a name="t74"></a><a id="45__923"></a>4.5 括号总结</h3> 
+<p>（1）中括号[] 字符集合，匹配方括号中的任意字符；<br> （2）大括号{} 量词符，里面表示重复次数<br> <s>（3）小括号() 表示优先级</s></p> 
+<p>可以在线测试：<a href="https://c.runboob.com">https://c.runboob.com</a></p> 
+<h3><a name="t75"></a><a name="t75"></a><a id="46__930"></a>4.6 预定义类</h3> 
+<p>预定义类指的是某些常见模式的简写方式；</p> 
+<div class="table-box"><table><thead><tr><th>预定类</th><th>说明</th></tr></thead><tbody><tr><td>\d</td><td>匹配0-9之间的任一数字，相当于[0-9]</td></tr><tr><td>\D</td><td>匹配所有0-9以外的字符，相当于[^0-9]</td></tr><tr><td>\w</td><td>匹配任意的字母、数字和下划线，相当于[A-Za-z0-9_]</td></tr><tr><td>\W</td><td>除所有字母、数字和下划线，相当于[^A-Za-z0-9_]</td></tr><tr><td>\s</td><td>匹配空格（包括换行符、制表符、空格符等），相当于[\t\r\n\v\f]</td></tr><tr><td>\S</td><td>匹配非空格，相当于[^\t\r\n\v\f]</td></tr></tbody></table></div>
+<p><mark><strong>正则表达式里面的或是一条竖线：“|”;</strong></mark></p> 
+<h2><a name="t76"></a><a name="t76"></a><a id="5_944"></a>5、正则表达式中的替换</h2> 
+<h3><a name="t77"></a><a name="t77"></a><a id="51_replace__945"></a>5.1 replace 替换</h3> 
+<p>replace（）方法可以实现替换字符串操作，用来替换的参数可以是一个字符串或是一个正则表达式；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">String<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>str1<span class="token punctuation">,</span>str2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>第一参数：被替换的字符串或者正则表达式；<br> 第二个参数：替换为的字符串；<br> 返回值是一个替换完毕的新字符串；</p> 
+<h3><a name="t78"></a><a name="t78"></a><a id="52__955"></a>5.2 正则表达式参数</h3> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">/</span>表达式<span class="token operator">/</span><span class="token punctuation">[</span><span class="token keyword">switch</span><span class="token punctuation">]</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>switch（也称为修饰符）按照什么样的模式来匹配，有三种值：<br> g：全局匹配；<br> i：忽略大小写；<br> gi：全局匹配+忽略大小写；</p> 
+<h1><a name="t79"></a><a name="t79"></a><a id="Day06_965"></a>Day06</h1> 
+<h2><a name="t80"></a><a name="t80"></a><a id="1ES6_966"></a>1、什么是ES6</h2> 
+<p>ES6实际上是一个泛指，泛指ES2015及后续的版本。</p> 
+<h2><a name="t81"></a><a name="t81"></a><a id="2let_969"></a>2、let关键字</h2> 
+<p>ES6中新增的用于声明变量的关键字。<br> （1）使用let关键字声明的变量具有块级作用域，防止循环变量变成全局变量；；<br> （2）不存在变量提升；<br> （3）暂时性死区；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">var</span> num <span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// num is undefined</span>
+ <span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li></ul></pre> 
+<p><strong>注意：在一个大括号中，使用let关键字声明的变量才具有块级作用域，var关键字不具备这个特点的；</strong></p> 
+<h2><a name="t82"></a><a name="t82"></a><a id="3const_985"></a>3、const关键字</h2> 
+<p>作用：声明常量，常量就是值（<strong>内存地址</strong>）不能变化的量；</p> 
+<p>（1）具有块级作用域；<br> （2）声明常量时必须赋值；<br> （3）常量赋值后，值不能修改；</p> 
+<h2><a name="t83"></a><a name="t83"></a><a id="4_let_const_var__992"></a>4、 let const var 的区别</h2> 
+<div class="table-box"><table><thead><tr><th>var</th><th>let</th><th>const</th></tr></thead><tbody><tr><td>函数级作用域</td><td>块级作用域</td><td>块级作用域</td></tr><tr><td>变量提升</td><td>不存在变量提升</td><td>不存在变量提升</td></tr><tr><td>值可更改</td><td>值可更改</td><td>值不可更改</td></tr></tbody></table></div>
+<h2><a name="t84"></a><a name="t84"></a><a id="5_999"></a>5、解构赋值</h2> 
+<p>ES6中允许从数组中提取值，按照对应位置，对变量赋值。对象也可以实现解构。</p> 
+<h3><a name="t85"></a><a name="t85"></a><a id="51__1002"></a>5.1 数组解构</h3> 
+<p><img src="https://img-blog.csdnimg.cn/20210412154741106.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTkyMDg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> 
+<h3><a name="t86"></a><a name="t86"></a><a id="52__1004"></a>5.2 对象解构</h3> 
+<p><img src="https://img-blog.csdnimg.cn/20210412154850780.png" alt="在这里插入图片描述"></p> 
+<h2><a name="t87"></a><a name="t87"></a><a id="6_1006"></a>6、箭头函数</h2> 
+<p>ES6中新增的定义函数的方式。</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li></ul></pre> 
+<p>（1）函数体中只有一句代码，且代码的执行结果就是返回值，可以省略大括号；<br> （2）如果形参只有一个，可以省略小括号；</p> 
+<h3><a name="t88"></a><a name="t88"></a><a id="61_this_1017"></a>6.1 箭头函数中的this关键字</h3> 
+<p>箭头函数不绑定this关键字，<strong>箭头函数中的this，指向的是函数定义位置的上下文this;</strong></p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span>
+            age<span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">,</span>
+            say<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>
+                <span class="token comment">// 对象不能产生作用域，相当于say方法是被定义在全局作用域中的</span>
+                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// undefined</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        obj<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li></ul></pre> 
+<h2><a name="t89"></a><a name="t89"></a><a id="7_1034"></a>7、剩余参数</h2> 
+<p>剩余参数语法允许我们将一个不定数量的参数表示为一个数组；</p> 
+<h3><a name="t90"></a><a name="t90"></a><a id="71__1037"></a>7.1 剩余参数和解构配合使用</h3> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'zhangsan'</span><span class="token punctuation">,</span><span class="token string">'lisi'</span><span class="token punctuation">,</span><span class="token string">'wangwu'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> <span class="token punctuation">[</span>s1<span class="token punctuation">,</span><span class="token operator">...</span>s2<span class="token punctuation">]</span> <span class="token operator">=</span> arr1<span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// zhangsan</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['lisi','wangwu']</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li></ul></pre> 
+<h2><a name="t91"></a><a name="t91"></a><a id="8ES6_1048"></a>8、ES6的内置对象扩展</h2> 
+<h3><a name="t92"></a><a name="t92"></a><a id="81_Array_____1049"></a>8.1 Array的扩展方法 扩展运算符（展开方法）</h3> 
+<p>扩展运算符可以将数组或者对象转为用逗号分隔的参数序列；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> ary <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">...</span>ary<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// a b c</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li></ul></pre> 
+<p><mark><strong>扩展运算符可以应用于合并数组。</strong></mark><br> <mark><strong>扩展运算符可以将类数组或可遍历对象转换为真正的数组</strong></mark></p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token comment">// let ary = ['a','b','c'];</span>
+        <span class="token comment">// console.log(...ary);  // a b c</span>
+        <span class="token comment">// console.log("a","b","c");</span>
+
+        <span class="token comment">// 扩展运算符应用1、合并数组</span>
+        <span class="token keyword">let</span> ary1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> ary2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">// 方法1</span>
+        <span class="token comment">// let ary3 = [...ary1,...ary2];</span>
+         <span class="token comment">// 方法2</span>
+        ary1<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>ary2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ary1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       
+        <span class="token comment">// 扩展运算符应用2、将类数组或可遍历对象转换为真正的数组</span>
+        <span class="token keyword">let</span> oDivs <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>oDivs<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li></ul></pre> 
+<h3><a name="t93"></a><a name="t93"></a><a id="82_Array____Arrayfrom_1087"></a>8.2 Array的扩展方法 构造函数方法 Array.from()</h3> 
+<p>将类数组或可遍历对象转换为真正的数组；<br> 方法还接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">var</span> arraylike <span class="token operator">=</span> <span class="token punctuation">{<!-- --></span>
+            <span class="token string">"0"</span><span class="token punctuation">:</span><span class="token string">"1"</span><span class="token punctuation">,</span>
+            <span class="token string">"1"</span><span class="token punctuation">:</span><span class="token string">"2"</span><span class="token punctuation">,</span>
+            <span class="token string">"length"</span><span class="token punctuation">:</span><span class="token number">2</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">var</span> arr <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>arraylike<span class="token punctuation">,</span> item<span class="token operator">=&gt;</span>item<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [2,4]</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li></ul></pre> 
+<h3><a name="t94"></a><a name="t94"></a><a id="83_Array__find_1104"></a>8.3 Array的扩展方法 实例方法find()</h3> 
+<p>用于找出<strong>第一个符合条件</strong>的数组成员，如果没有找到返回undefined；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> ary <span class="token operator">=</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{<!-- --></span>
+                id<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+                name<span class="token punctuation">:</span><span class="token string">"zhangsan"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{<!-- --></span>
+                id<span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                name<span class="token punctuation">:</span><span class="token string">"lisi"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{<!-- --></span>
+                id<span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                name<span class="token punctuation">:</span><span class="token string">"wangwu"</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> target <span class="token operator">=</span> ary<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>item <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>id<span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// {id:2,name:"lisi"}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li></ul></pre> 
+<h3><a name="t95"></a><a name="t95"></a><a id="84_Array__findIndex_1128"></a>8.4 Array的扩展方法 实例方法findIndex()</h3> 
+<p>用于找出<strong>第一个符合条件</strong>的数组成员的位置，如果没有找到就返回-1；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> index <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span>item<span class="token operator">=&gt;</span>item <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 1</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li></ul></pre> 
+<h3><a name="t96"></a><a name="t96"></a><a id="85_Array__includes_1139"></a>8.5 Array的扩展方法 实例方法includes()</h3> 
+<p>表示某个数组是否包含给定的值，返回布尔值；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// false</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li></ul></pre> 
+<h3><a name="t97"></a><a name="t97"></a><a id="86_String__1150"></a>8.6 String的扩展方法 模板字符串</h3> 
+<p>模板字符串<br> ES6新增的创建字符串的方式，使用反引号定义。<br> <strong>模板字符串可以解析变量；</strong><br> <strong>模板字符串中可以换行；</strong><br> <strong>模板字符串中可以调用函数；</strong></p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token comment">// 模板字符串可以解析变量</span>
+        <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">"zhangsan"</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`我的名字是</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 我的名字是zhangsan</span>
+
+        <span class="token comment">// 模板字符串可以调用函数</span>
+        <span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>
+            <span class="token keyword">return</span> <span class="token string">"我是fn函数"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`我要调用 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 我要调用 我是fn函数</span>
+
+        <span class="token comment">// 模板字符串可以换行</span>
+        <span class="token keyword">let</span> html <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+        1
+        2
+        `</span></span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li></ul></pre> 
+<h3><a name="t98"></a><a name="t98"></a><a id="87_String__startsWithendsWith_1178"></a>8.7 String的扩展方法 实例方法 startsWith()和endsWith()</h3> 
+<p>**startsWith()：**表示参数字符串是否在原字符串的头部，返回布尔值；<br> **endsWith()😗*表示参数字符串是否在原字符串的尾部，返回布尔值；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li></ul></pre> 
+<h3><a name="t99"></a><a name="t99"></a><a id="88_String__repeat_1190"></a>8.8 String的扩展方法 实例方法 repeat()</h3> 
+<p>repeat方法表示将原字符串重复n次，返回一个新字符串；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"y"</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// yyyyy</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li></ul></pre> 
+<h2><a name="t100"></a><a name="t100"></a><a id="9Set_1201"></a>9、Set数据结构</h2> 
+<p>ES6提供了新的数据结构set。它类似于数组，但是<strong>成员的值都是唯一的，没有重复的值</strong>。<br> <strong>利用Set数据结构做数组去重；</strong></p> 
+<p>Set本身是一个构造函数，用来生成Set数据结构。</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">const</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<p>Set 函数可以接受一个数组作为参数，用来初始化；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token keyword">const</span> <span class="token keyword">set</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+        <span class="token keyword">const</span> <span class="token keyword">set</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">set</span><span class="token punctuation">.</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//2</span>
+        <span class="token keyword">const</span> ary <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">set</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 转换为数组</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ary<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [1,2]</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li></ul></pre> 
+<h3><a name="t101"></a><a name="t101"></a><a id="91_Set__1227"></a>9.1 Set数据结构 实例方法</h3> 
+<p>add(value) ：添加某个值，返回set结构本身；<br> delete（value）：删除某个值，返回一个布尔值，表示删除是否成功；<br> has(value):返回一个布尔值，表示该值是否为Set的成员；<br> clear()：清除所有成员，没有返回值；</p> 
+<h3><a name="t102"></a><a name="t102"></a><a id="92_Set__1233"></a>9.2 Set数据结构 遍历</h3> 
+<p>Set 结构的实例和数组一样，也拥有forEach方法，用于对每个成员执行某种操作，没有返回值；</p> 
+<pre class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">s<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>value <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre>
+                </div><div data-report-view="{&quot;mod&quot;:&quot;1585297308_001&quot;,&quot;dest&quot;:&quot;https://blog.csdn.net/qq_45192089/article/details/115212590&quot;,&quot;extend1&quot;:&quot;pc&quot;,&quot;ab&quot;:&quot;new&quot;}"><div></div></div>
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-d7a94ec6ab.css" rel="stylesheet">
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-f1c5feb645.css" rel="stylesheet">
+        </div>
