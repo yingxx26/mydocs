@@ -31,7 +31,7 @@
         款项确认//生成银行资金流水  操作银行账户资金
         tprYhzjlsService.saveZjsyYhzjls(kxqr);
 
-结息 listZjjx.jsp    startWxjjx()   dqgsByzhcode()定期结息公式  hqgsByzhcode()活期结息公式
+
 
 银行资金流水
     YhzjlsManagerServiceImpl.ruku_zsk

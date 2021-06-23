@@ -1,0 +1,74 @@
+结息页面 listZjjx.jsp
+startWxjjx()   dqgsByzhcode()定期结息公式  hqgsByzhcode()活期结息公式
+真正结息：存储过程JX_3_ZHJXMX_FROM_GS_WXJ
+活期利息  -- 金额*利率*天数*0.01/年度总天数
+
+循环变动明细集合 计算：
+定期： 取变动后余额最小的那个的值 乘以利率
+活期： 1，上次结息日的变动后余额-定期（上面的值）=活期初始金额
+       2，大于0的变动（缴存），直接存为未动用
+       3，小于0的变动（使用）， 分解，有两种情况
+             3,1： 够用 ，分成两条数据 1：动用 2：未动用
+             3,2： 不够用，递归
+       4，（存储过程实现）根据时间不同，计算动用和未动用的利息，相加
+
+
+    //变动金额正（缴存）直接保存并未动用金额。 现在这里是变动金额负（使用）
+    //递归  --计算活期动用金额的利息
+    public List<TprHqjxgs> fenjieSYje(List<TprHqjxgs> tprHqjxgses, BigDecimal bdje, Date bdrq) {//bdje变动金额为负值
+        //此过程中还需要进行循环
+        tprHqjxgses = this.sortByBdsj(tprHqjxgses);//排序
+        for (int k = tprHqjxgses.size() - 1; k >= 0; k--) { //递归for循环，累次计算最近未动用的
+            TprHqjxgs tprHqjxgs = tprHqjxgses.get(k);//依次计算
+            if (tprHqjxgs.getSfdy().equals(JxConstants.SFDY_WDY)) {
+                BigDecimal xbig = tprHqjxgs.getWdyje().add(bdje);//使用金额 + 上次存的金额  此时bdje<0
+                if (xbig.compareTo(BigDecimal.ZERO) >= 0) {  //够用
+                    tprHqjxgses.remove(k);//拆分之前，删除未动用 :之后拆分为以下两步
+                    //1\动用
+                    TprHqjxgs xx = new TprHqjxgs();
+                    xx.setJxbz(tprHqjxgs.getJxbz());
+                    xx.setJxpc(tprHqjxgs.getJxpc());
+                    xx.setDyje(bdje.multiply(BigDecimal.valueOf(-1)));//将负值变为正值
+                    xx.setSfdy(JxConstants.SFDY_DY);
+                    xx.setDyjejcsj(tprHqjxgs.getWdyjejcsj());//交存时间=原 交存时间
+                    xx.setDysj(bdrq);//动用时间=本次使用金额时间
+                    xx.setZhcode(tprHqjxgs.getZhcode());
+                    tprHqjxgses.add(xx);
+                    //2\未动用  拆分
+                    xx = new TprHqjxgs();//
+                    xx.setSfdy(JxConstants.SFDY_WDY);//原本金 剩余未动用部分继续保留
+                    xx.setJxpc(tprHqjxgs.getJxpc());
+                    xx.setZhcode(tprHqjxgs.getZhcode());
+                    xx.setJxbz(tprHqjxgs.getJxbz());
+                    xx.setWdyje(xbig); //拆分之后未动用=原未动用+ 使用金额（使用金额为负值）
+                    xx.setWdyjejcsj(tprHqjxgs.getWdyjejcsj());
+                    tprHqjxgses.add(xx);
+                    //够用的情况，完成之后进行排序返回
+                    tprHqjxgses = this.sortByBdsj(tprHqjxgses);
+                    return tprHqjxgses;
+                } else {  //不够用的情况
+                    //拆分
+                    tprHqjxgses.remove(k);//以序号来删
+                    // 之后有两步：2，增加动用金额 3，将不够的那部分,进行递归
+                    //2\动用
+                    TprHqjxgs xx = new TprHqjxgs();
+                    xx.setJxbz(tprHqjxgs.getJxbz());
+                    xx.setJxpc(tprHqjxgs.getJxpc());
+                    xx.setDyje(tprHqjxgs.getWdyje());//剩余未动用的金额全部使用完 ，第三部再用其他的
+                    xx.setSfdy(JxConstants.SFDY_DY);
+                    xx.setDyjejcsj(tprHqjxgs.getWdyjejcsj());//
+                    xx.setDysj(bdrq);
+                    xx.setZhcode(tprHqjxgs.getZhcode());
+                    tprHqjxgses.add(xx);
+                    tprHqjxgses = this.sortByBdsj(tprHqjxgses);
+                    //3\ 排序之后递归循环计算
+                    BigDecimal dg_bdje = xbig;//为负值 ==不够用（差的那部分钱）
+                    List<TprHqjxgs> tprHqjxgses1 = fenjieSYje(tprHqjxgses, dg_bdje, bdrq);
+                    return tprHqjxgses1;//必须先return 再去分解
+                }
+            } else {
+                continue;//不从动用的金额去使用
+            }
+        }
+        return tprHqjxgses;
+    }
