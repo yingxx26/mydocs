@@ -16,15 +16,8 @@
 
 
 
---soar                合同模板  预售证申报  合同签订（线下签字 或 e签宝电子签章）特殊人才
+--soar    合同模板  预售证申报  合同签订（线下签字 或 e签宝电子签章）
 
---E签宝 发短信之前流程
-/spfhtdzqz/loadReadonlyHtwbDzqz.action?htmbid=1035610&htid=403050&htcode=403050&roleName=shengxiao&moduleName=402882f528b9d3dd0128b9d781ce0003
-/spfhtdzqz/getGfrs.action?htid=403050&htcode=403050
-/spfhtdzqz/getPdf.action
-/spfhtdzqz/htcqsj.action
-/spfhtdzqz/getQzzt.action?htid=403050
-/spfhtdzqz/zxqz.action
 
 --每特 mycat
 
@@ -77,10 +70,8 @@ map treemap  skipmap   SkipList（解决链表的索引问题）
 实现一下：
 优惠券 发放，分享，使用
 优惠券发放时机：注册，节日，拉新
-拼团（weapp）
+
 --店铺装修
-使用分摊
-结息
 
 spark
 spark数据倾斜：

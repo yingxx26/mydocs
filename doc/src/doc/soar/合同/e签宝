@@ -1,0 +1,15 @@
+
+api创建e签宝买方/卖方账户，上传合同，发起签章，,发送短信，法人和买方登陆短信（e签宝oauth登陆页面）签约，
+     签约人盖章后 回调qzhd(二维码) -》盖章审核后 回调shhjqzhd(水印)
+
+
+--E签宝 发短信之前流程
+信息确认-》选择移动端-》预览合同
+-》//电子签章按钮  /spfhtdzqz/loadReadonlyHtwbDzqz.action?htmbid=1035610&htid=403050&htcode=403050&roleName=shengxiao&moduleName=402882f528b9d3dd0128b9d781ce0003
+->发送短信，登录e签包签章，人脸识别
+-转出
+/spfhtdzqz/getGfrs.action?htid=403050&htcode=403050
+/spfhtdzqz/getPdf.action
+/spfhtdzqz/htcqsj.action
+/spfhtdzqz/getQzzt.action?htid=403050
+/spfhtdzqz/zxqz.action
