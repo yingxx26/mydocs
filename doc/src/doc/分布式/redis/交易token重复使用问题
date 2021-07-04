@@ -1,0 +1,8 @@
+if(查询redis){
+ 删除redis
+}
+可能出现并发问题
+
+用lua脚本解决
+类似 "if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end";
+

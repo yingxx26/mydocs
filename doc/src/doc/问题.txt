@@ -61,8 +61,9 @@ leetcode
 文档 画图
 设计模式
 
-
-
+社交登录，
+（秒杀 redis，切换aof丢失数据）
+分布式
 map treemap  skipmap   SkipList（解决链表的索引问题）
 
 
