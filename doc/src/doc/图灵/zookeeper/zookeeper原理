@@ -1,6 +1,6 @@
 选举是核心startLeaderElection()
 
-第一次：先文件自己写的myid， 后命令zxid
+第一次：先文件自己写的zxid， 后 myid
 
 重新选举：leader和follwer  ping心跳，如果断开  finally中改成looking继续选举
 

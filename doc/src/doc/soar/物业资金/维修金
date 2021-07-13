@@ -38,6 +38,7 @@
     //根据资金流水记录调整涉及到的账户的余额
             yhzjlsList = this.yhzjzhZjtz(yhzjlsList);
 
+
 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、
 com.hzfc.soar.wyjj.fzgn.zjyft.action.ZjyftAction#ftfy 预分摊 和结息
 com.hzfc.soar.wyjj.fzgn.zjcft.action  ftfy 重分摊
