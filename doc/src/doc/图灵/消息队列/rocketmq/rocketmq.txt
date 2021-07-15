@@ -23,3 +23,8 @@ RocketMQ 中，订阅者的概念是通过消费组（Consumer Group）来体现
 
 Kafka 的消息模型和 RocketMQ 是完全一样的.
 唯一的区别是，在 Kafka 中，队列这个概念的名称不一样，Kafka 中对应的名称是分区（Partition）
+
+
+消费挤压和顺序问题
+rabbitmq:增加消费者
+rocketmq：增加队列（kafka -》Partition）
